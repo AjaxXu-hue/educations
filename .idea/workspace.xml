@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17cb7163-4efc-4771-a270-04a5149ee16c" name="Default Changelist" comment="" />
+    <list default="true" id="17cb7163-4efc-4771-a270-04a5149ee16c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-biz/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/src/main/java/org/biz/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-biz/src/main/java/org/biz/BizRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-instructor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-instructor/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-login/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-login/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-payment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-search/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-search/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,9 +25,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -24,14 +42,39 @@
     </option>
   </component>
   <component name="ProjectId" id="1bcHMdq4VNG5f0S5aGSDfp0auoq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../security" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Roncoo" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15722656" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
+      <recent name="F:\springboots\educations\common\src\main\resources\mapper_config" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper" />
+      <recent name="F:\springboots\educations\common\src\main\java\org\common\mapper\user" />
+      <recent name="F:\springboots\educations\common\src\main\java\org\common\mapper" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\springboots\educations\ed-system\src\main\java" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\user" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\education-user" />
+      <recent name="F:\springboots\educations\common\src\main\java\pojo\education_user" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,6 +88,40 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Spring Boot.SystemRun">
+    <configuration name="BizRun" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="edbiz" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.biz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.biz.BizRun" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemRun" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="edsystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.demo.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.demo.system.SystemRun" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SystemRun" />
+        <item itemvalue="Spring Boot.BizRun" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -55,11 +132,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588924414843</updated>
-      <workItem from="1588924417999" duration="1144000" />
+      <workItem from="1588924417999" duration="2021000" />
+      <workItem from="1588926514283" duration="4231000" />
+      <workItem from="1588942996049" duration="620000" />
+      <workItem from="1588950420933" duration="2820000" />
+      <workItem from="1588953289518" duration="2889000" />
+      <workItem from="1588956210629" duration="19000" />
+      <workItem from="1588956277904" duration="14000" />
+      <workItem from="1588956555844" duration="915000" />
+      <workItem from="1588957841195" duration="493000" />
+      <workItem from="1588958754175" duration="7186000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

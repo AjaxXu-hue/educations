@@ -11,5 +11,13 @@
 
     <artifactId>ed-instructor</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.demo</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
+
+    </dependencies>
 </project>

@@ -8,12 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="edbiz" />
         <module name="edlogin" />
-        <module name="edorder" />
-        <module name="edpayment" />
         <module name="edsystem" />
+        <module name="edorder" />
         <module name="edinstructor" />
-        <module name="edsearch" />
         <module name="common" />
+        <module name="edsearch" />
+        <module name="edpayment" />
       </profile>
     </annotationProcessing>
   </component>

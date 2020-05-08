@@ -1,0 +1,7 @@
+pojo\system\Role.class
+mapper\system\SysUserMapper.class
+mapper\system\MenuMapper.class
+pojo\user\User_Ext.class
+pojo\system\SysUser.class
+pojo\system\Menu.class
+pojo\user\User.class

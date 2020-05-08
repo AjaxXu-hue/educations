@@ -1,0 +1,11 @@
+org\demo\system\service\MenuService.class
+org\demo\system\service\MenuServiceImpl.class
+org\demo\system\config\WebSecurityConfig$3.class
+org\demo\system\SystemRun.class
+org\demo\system\config\CustomMetadataSource.class
+org\demo\system\config\UrlAccessDecisionManger.class
+org\demo\system\service\UserService.class
+org\demo\system\config\WebSecurityConfig$1.class
+org\demo\system\config\WebSecurityConfig$2.class
+org\demo\system\config\AuthenticationAccessDeniedHandler.class
+org\demo\system\config\WebSecurityConfig.class

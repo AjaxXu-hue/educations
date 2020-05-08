@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.system.SysUserMapper">
+
+    <!--根据用户名查询信息-->
+    <select id="findSysUserByName" resultType="pojo.system.SysUser">
+        SELECT * FROM `sys_user`
+        WHERE `real_name` = #{userName}
+    </select>
+
+    <!--根据id查询用户角色-->
+    <select id="findSysUserById" resultType="pojo.system.Role">
+        SELECT * FROM `sys_role` r , `sys_role_user` ul
+        WHERE r.id = ul.rid AND
+            ul.uid = {id}
+    </select>
+
+</mapper>
