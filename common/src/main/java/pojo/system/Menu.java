@@ -7,32 +7,32 @@ import java.util.List;
 public class Menu {
 
     private Integer id;//主键
-    private String menuName;//菜单名称
-    private String menuUrl;//路由路径
-    private String apiUrl;//接口URL
+    private String menu_name;//菜单名称
+    private String menu_url;//路由路径
+    private String api_url;//接口URL
     private Integer parentId;//父ID
-    private String menuIcon;//菜单图标
-    private boolean menuType;//菜单类型(1：目录 2：菜单 3：按钮)
-    private boolean statusId;//状态(1:正常，0:禁用)
+    private String menu_icon;//菜单图标
+    private boolean menu_type;//菜单类型(1：目录 2：菜单 3：按钮)
+    private boolean status_id;//状态(1:正常，0:禁用)
     private String remark;//备注
-    private Date gmtCreate;//创建时间
-    private Date gmtModified;//修改时间
+    private Date gmt_create;//创建时间
+    private Date gmt_modified;//修改时间
     private List<Role> roles;
 
     @Override
     public String toString() {
-        return "SysMenu{" +
+        return "Menu{" +
                 "id=" + id +
-                ", menuName='" + menuName + '\'' +
-                ", menuUrl='" + menuUrl + '\'' +
-                ", apiUrl='" + apiUrl + '\'' +
+                ", menu_name='" + menu_name + '\'' +
+                ", menu_url='" + menu_url + '\'' +
+                ", api_url='" + api_url + '\'' +
                 ", parentId=" + parentId +
-                ", menuIcon='" + menuIcon + '\'' +
-                ", menuType=" + menuType +
-                ", statusId=" + statusId +
+                ", menu_icon='" + menu_icon + '\'' +
+                ", menu_type=" + menu_type +
+                ", status_id=" + status_id +
                 ", remark='" + remark + '\'' +
-                ", gmtCreate=" + gmtCreate +
-                ", gmtModified=" + gmtModified +
+                ", gmt_create=" + gmt_create +
+                ", gmt_modified=" + gmt_modified +
                 ", roles=" + roles +
                 '}';
     }
@@ -45,28 +45,28 @@ public class Menu {
         this.id = id;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public String getMenu_name() {
+        return menu_name;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setMenu_name(String menu_name) {
+        this.menu_name = menu_name;
     }
 
-    public String getMenuUrl() {
-        return menuUrl;
+    public String getMenu_url() {
+        return menu_url;
     }
 
-    public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl;
+    public void setMenu_url(String menu_url) {
+        this.menu_url = menu_url;
     }
 
-    public String getApiUrl() {
-        return apiUrl;
+    public String getApi_url() {
+        return api_url;
     }
 
-    public void setApiUrl(String apiUrl) {
-        this.apiUrl = apiUrl;
+    public void setApi_url(String api_url) {
+        this.api_url = api_url;
     }
 
     public Integer getParentId() {
@@ -77,28 +77,28 @@ public class Menu {
         this.parentId = parentId;
     }
 
-    public String getMenuIcon() {
-        return menuIcon;
+    public String getMenu_icon() {
+        return menu_icon;
     }
 
-    public void setMenuIcon(String menuIcon) {
-        this.menuIcon = menuIcon;
+    public void setMenu_icon(String menu_icon) {
+        this.menu_icon = menu_icon;
     }
 
-    public boolean isMenuType() {
-        return menuType;
+    public boolean isMenu_type() {
+        return menu_type;
     }
 
-    public void setMenuType(boolean menuType) {
-        this.menuType = menuType;
+    public void setMenu_type(boolean menu_type) {
+        this.menu_type = menu_type;
     }
 
-    public boolean isStatusId() {
-        return statusId;
+    public boolean isStatus_id() {
+        return status_id;
     }
 
-    public void setStatusId(boolean statusId) {
-        this.statusId = statusId;
+    public void setStatus_id(boolean status_id) {
+        this.status_id = status_id;
     }
 
     public String getRemark() {
@@ -109,20 +109,20 @@ public class Menu {
         this.remark = remark;
     }
 
-    public Date getGmtCreate() {
-        return gmtCreate;
+    public Date getGmt_create() {
+        return gmt_create;
     }
 
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
+    public void setGmt_create(Date gmt_create) {
+        this.gmt_create = gmt_create;
     }
 
-    public Date getGmtModified() {
-        return gmtModified;
+    public Date getGmt_modified() {
+        return gmt_modified;
     }
 
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
+    public void setGmt_modified(Date gmt_modified) {
+        this.gmt_modified = gmt_modified;
     }
 
     public List<Role> getRoles() {

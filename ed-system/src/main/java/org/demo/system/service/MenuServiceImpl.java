@@ -8,8 +8,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-//@Transactional
-//@CacheConfig(cacheNames = "menus_cache")
 public class MenuServiceImpl implements MenuService{
 
     @Resource
@@ -17,8 +15,11 @@ public class MenuServiceImpl implements MenuService{
 
     //获取所有菜单资源
     @Override
-//    @Cacheable(key = "#root.methodName")
     public List<Menu> getAllMenu() {
         return menuMapper.getAllMenu();
     }
+
+
+
+
 }

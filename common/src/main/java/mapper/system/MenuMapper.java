@@ -5,7 +5,7 @@ import pojo.system.Menu;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface MenuMapper {
 
     //查询所有路径信息

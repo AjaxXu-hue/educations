@@ -8,7 +8,7 @@
         <id column="id" property="id"/>
         <collection property="roles" ofType="pojo.system.Role">
             <id column="id" property="id"/>
-            <result column="roleName" property="roleName"/>
+            <result column="roleName" property="role_name"/>
             <result column="remark" property="remark"/>
         </collection>
     </resultMap>

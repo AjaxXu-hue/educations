@@ -1,5 +1,6 @@
 package pojo.system;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,11 +16,14 @@ public class SysUser implements UserDetails {
     private Integer userNo;//用户编号
     private String password;//密码
     private String mobile;//手机号码
-    private String realName;//真实姓名
-    private boolean statusId;//状态(1:正常，0:禁用)
-    private Date gmtCreate;//创建时间
-    private Date gmtModified;//修改时间
+    private String real_name;//真实姓名
+    private Integer dictinfoID;//状态(关联字典明细表)
+    private Date gmt_create;//创建时间
+    private Date gmt_modified;//修改时间
     private List<Role> roles;
+
+    private String typeNamezh;//类型名称(中文)
+    private String info;//配置项名称
 
     @Override
     public String toString() {
@@ -28,25 +32,27 @@ public class SysUser implements UserDetails {
                 ", userNo=" + userNo +
                 ", password='" + password + '\'' +
                 ", mobile='" + mobile + '\'' +
-                ", realName='" + realName + '\'' +
-                ", statusId=" + statusId +
-                ", gmtCreate=" + gmtCreate +
-                ", gmtModified=" + gmtModified +
+                ", real_name='" + real_name + '\'' +
+                ", dictinfoID=" + dictinfoID +
+                ", gmt_create=" + gmt_create +
+                ", gmt_modified=" + gmt_modified +
                 ", roles=" + roles +
+                ", typeNamezh='" + typeNamezh + '\'' +
+                ", info='" + info + '\'' +
                 '}';
     }
 
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
         for (Role role : roles){
-            authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+            authorities.add(new SimpleGrantedAuthority(role.getRole_name()));
         }
         return authorities;
     }
 
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public String getPassword() {
         return password;
@@ -54,22 +60,22 @@ public class SysUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return realName;
+        return real_name;
     }
 
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
@@ -80,6 +86,7 @@ public class SysUser implements UserDetails {
         return true;
     }
 
+    //get/set方法
     public Integer getId() {
         return id;
     }
@@ -108,36 +115,36 @@ public class SysUser implements UserDetails {
         this.mobile = mobile;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getReal_name() {
+        return real_name;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setReal_name(String real_name) {
+        this.real_name = real_name;
     }
 
-    public boolean isStatusId() {
-        return statusId;
+    public Integer getDictinfoID() {
+        return dictinfoID;
     }
 
-    public void setStatusId(boolean statusId) {
-        this.statusId = statusId;
+    public void setDictinfoID(Integer dictinfoID) {
+        this.dictinfoID = dictinfoID;
     }
 
-    public Date getGmtCreate() {
-        return gmtCreate;
+    public Date getGmt_create() {
+        return gmt_create;
     }
 
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
+    public void setGmt_create(Date gmt_create) {
+        this.gmt_create = gmt_create;
     }
 
-    public Date getGmtModified() {
-        return gmtModified;
+    public Date getGmt_modified() {
+        return gmt_modified;
     }
 
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
+    public void setGmt_modified(Date gmt_modified) {
+        this.gmt_modified = gmt_modified;
     }
 
     public List<Role> getRoles() {
@@ -146,5 +153,21 @@ public class SysUser implements UserDetails {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getTypeNamezh() {
+        return typeNamezh;
+    }
+
+    public void setTypeNamezh(String typeNamezh) {
+        this.typeNamezh = typeNamezh;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

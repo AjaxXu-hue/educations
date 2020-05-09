@@ -6,7 +6,7 @@ import pojo.system.SysUser;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface SysUserMapper {
 
     /*

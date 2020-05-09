@@ -27,11 +27,11 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
         String requestUrl = ((FilterInvocation) o).getRequestUrl();
         List<Menu> allMenu = menuService.getAllMenu();
         for (Menu menu : allMenu){
-            if (antPathMatcher.match(menu.getApiUrl() , requestUrl)){
+            if (antPathMatcher.match(menu.getApi_url() , requestUrl)){
                 List<Role> roles = menu.getRoles();
                 String[] values = new String[roles.size()];
                 for (int i = 0 ; i < values.length ; i++){
-                    values[i] = roles.get(i).getRoleName();
+                    values[i] = roles.get(i).getRole_name();
                 }
                 return SecurityConfig.createList(values);
             }
