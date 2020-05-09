@@ -6,18 +6,27 @@
 
     <resultMap id="BaseResultMap" type="pojo.system.Menu">
         <id column="id" property="id"/>
+        <id column="menu_name" property="menu_name"/>
+        <id column="menu_url" property="menu_url"/>
+        <id column="api_url" property="api_url"/>
+        <id column="parentId" property="parentId"/>
+        <id column="menu_icon" property="menu_icon"/>
+        <id column="menu_type" property="menu_type"/>
+        <id column="status_id" property="status_id"/>
+        <id column="remark" property="remark"/>
+        <result column="api_url" property="api_url"></result>
         <collection property="roles" ofType="pojo.system.Role">
-            <id column="id" property="id"/>
-            <result column="roleName" property="role_name"/>
-            <result column="remark" property="remark"/>
+            <id column="rid" property="id"/>
+            <result column="rname" property="role_name"/>
+            <result column="rremark" property="remark"/>
         </collection>
     </resultMap>
 
     <!--查询所有路径信息-->
     <select id="getAllMenu" resultMap="BaseResultMap">
-	    SELECT m.* , r.id AS rid , r.`role_name` AS roleName , r.`remark` AS remark
+	    SELECT m.* , r.id AS rid , r.`role_name` AS rname , r.`remark` AS rremark
         FROM `sys_menu` m
             LEFT JOIN `sys_menu_role` mr ON m.`id` = mr.`mid`
-	        LEFT JOIN `sys_role` r ON mr.`rid` = r.`id`
+            LEFT JOIN `sys_role` r ON mr.`rid` = r.`id`
     </select>
 </mapper>

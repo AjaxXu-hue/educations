@@ -21,7 +21,6 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         //查询用户信息
         SysUser userInfo = userMapper.findSysUserByName(userName);
-        System.out.println("======"+userInfo);
         if(null == userInfo){
             throw new UsernameNotFoundException("用户名不存在");
         } else if(userInfo.getDictinfoID() != 1){

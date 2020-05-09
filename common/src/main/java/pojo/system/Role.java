@@ -5,7 +5,7 @@ import java.util.Date;
 //系统管理员  角色表
 public class Role {
 
-    private Integer id;
+    private Long id;
     private Integer dictinfoID;//状态(关联字典明细表)
     private String role_name;//名称(英文)
     private String remark;//备注(中文名称)
@@ -29,11 +29,11 @@ public class Role {
                 '}';
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

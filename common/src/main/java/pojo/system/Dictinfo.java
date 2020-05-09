@@ -9,15 +9,15 @@ public class Dictinfo implements Serializable {
     /**
     * 主键
     */
-    private Integer id;
+    private Long id;
     /**
     * 类型ID
     */
-    private Integer typecode;
+    private Long typecode;
     /**
     * 业务代码
     */
-    private Integer dictcode;
+    private Long dictcode;
     /**
     * 配置项名称
     */
@@ -33,27 +33,27 @@ public class Dictinfo implements Serializable {
     private String typenamezh;
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getTypecode() {
+    public Long getTypecode() {
         return typecode;
     }
 
-    public void setTypecode(Integer typecode) {
+    public void setTypecode(Long typecode) {
         this.typecode = typecode;
     }
 
-    public Integer getDictcode() {
+    public Long getDictcode() {
         return dictcode;
     }
 
-    public void setDictcode(Integer dictcode) {
+    public void setDictcode(Long dictcode) {
         this.dictcode = dictcode;
     }
 
