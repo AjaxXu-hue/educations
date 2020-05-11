@@ -23,9 +23,9 @@ public class WebsiteLinkController {
                         @RequestParam(value = "status" , required = false) String status){
         WebsiteLink websiteLink = new WebsiteLink();
         //判断数据是否为空
-        if(null != linkName){
+        if(null != linkName && !linkName.equals("")){
             websiteLink.setLinkName(linkName);
-        } else if(null != status){
+        } else if(null != status && !status.equals("")){
             websiteLink.setStatusId(Integer.parseInt(status));
         }
 
@@ -82,7 +82,7 @@ public class WebsiteLinkController {
         return DtoUtil.returnSuccess("新增成功");
     }
 
-    //删除链接信息(硬删除)
+    //删除链接信息[硬删除]
     @GetMapping("/system/webLink/deleteById")
     public Dto deleteBuId(String id){
         //删除操作

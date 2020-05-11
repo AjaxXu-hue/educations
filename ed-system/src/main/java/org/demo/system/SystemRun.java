@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-@MapperScan("mapper.system")
+@MapperScan({"mapper.system","mapper.user"})
 public class SystemRun {
 
     public static void main(String[] args) {

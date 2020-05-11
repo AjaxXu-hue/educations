@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.system.WebsiteNavMapper">
+
+    <resultMap type="pojo.system.WebsiteNav" id="WebsiteNavMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="navName" column="nav_name" jdbcType="VARCHAR"/>
+        <result property="parentId" column="parent_id" jdbcType="OTHER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="statusId" column="status_id" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="WebsiteNavMap">
+        select
+          id, nav_name, parent_id, sort, status_id, gmt_create, gmt_modified
+        from education_system.website_nav
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="WebsiteNavMap">
+        select
+          id, nav_name, parent_id, sort, status_id, gmt_create, gmt_modified
+        from education_system.website_nav
+        <where>
+            <if test="navName != null and navName != ''">
+                and nav_name like CONCAT ('%',#{navName},'%')
+            </if>
+            <if test="statusId != null and statusId != ''">
+                and status_id = #{statusId}
+            </if>
+            <if test="parentId != null and parentId != ''">
+                and parent_id = #{parentId}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertNavInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_system.website_nav(nav_name, parent_id, status_id, gmt_create, gmt_modified)
+        values (#{navName}, #{parentId}, #{statusId}, #{gmtCreate}, #{gmtModified})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateNavInfo">
+        update education_system.website_nav
+        <set>
+            <if test="navName != null and navName != ''">
+                nav_name = #{navName},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_system.website_nav where id = #{id}
+    </delete>
+
+    <!--由父级ID删除数据-->
+    <delete id="deleteByParent">
+        delete from education_system.website_nav where parent_id = #{parentId}
+    </delete>
+
+</mapper>

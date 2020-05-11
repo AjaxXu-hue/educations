@@ -3,21 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="17cb7163-4efc-4771-a270-04a5149ee16c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/mapper/system/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/mapper/system/MenuMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/system/Dictinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/system/Dictinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/system/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/system/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/system/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/system/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/mapper/system/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/mapper/system/MenuMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/system/Dictinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/pojo/system/Dictinfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/system/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/pojo/system/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/system/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/pojo/system/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/CustomMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/CustomMetadataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/CustomMetadataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/CustomMetadataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/SystemRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/SystemRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/WebsiteLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/WebsiteLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/SystemRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/SystemRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/WebsiteLinkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/WebsiteLinkController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,18 +32,25 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL for 5.1 - education_system@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="education_user@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL for 5.1 - education_system@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="education_user@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL for 5.1 - education_system@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="education_user@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="education_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="education_user: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="education_user@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="education_user: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -66,6 +66,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -87,26 +88,15 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/ssm/itripBackend" />
+    <property name="last_opened_file_path" value="D:/GIT/Git/cmd/git.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15722656" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
-      <recent name="F:\springboots\educations\ed-system\src\main\java\org\demo\system\mapper" />
-      <recent name="F:\springboots\educations\common\src\main\resources\mapper_config" />
-      <recent name="F:\springboots\educations\common\src\main\java\mapper" />
-      <recent name="F:\springboots\educations\common\src\main\java\org\common\mapper\user" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="utils" />
-      <recent name="pojo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
@@ -114,6 +104,20 @@
       <recent name="F:\springboots\educations\ed-system\src\main\java" />
       <recent name="F:\springboots\educations\common\src\main\java\mapper\user" />
       <recent name="F:\springboots\educations\common\src\main\java\mapper\education-user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.demo.system.config" />
+      <recent name="mapper.user" />
+      <recent name="mapper.system" />
+      <recent name="utils" />
+      <recent name="pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\user" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
+      <recent name="F:\springboots\educations\ed-system\src\main\java\org\demo\system\mapper" />
+      <recent name="F:\springboots\educations\common\src\main\resources\mapper_config" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,6 +196,11 @@
       <workItem from="1589015725305" duration="1273000" />
       <workItem from="1589032699149" duration="8432000" />
       <workItem from="1589043015929" duration="5798000" />
+      <workItem from="1589103695058" duration="6925000" />
+      <workItem from="1589117018267" duration="18471000" />
+      <workItem from="1589171364415" duration="1204000" />
+      <workItem from="1589176348229" duration="5812000" />
+      <workItem from="1589182565439" duration="458000" />
     </task>
     <servers />
   </component>
