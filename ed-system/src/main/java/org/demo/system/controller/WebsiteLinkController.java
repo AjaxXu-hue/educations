@@ -25,7 +25,8 @@ public class WebsiteLinkController {
         //判断数据是否为空
         if(null != linkName && !linkName.equals("")){
             websiteLink.setLinkName(linkName);
-        } else if(null != status && !status.equals("")){
+        }
+        if(null != status && !status.equals("")){
             websiteLink.setStatusId(Integer.parseInt(status));
         }
 

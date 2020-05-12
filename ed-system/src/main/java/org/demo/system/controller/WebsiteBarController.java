@@ -26,7 +26,8 @@ public class WebsiteBarController {
         //判断获取数据
         if(null != barName && !barName.equals("")){
             websiteBar.setNavTitle(barName);
-        } else if(null != status && !status.equals("")){
+        }
+        if(null != status && !status.equals("")){
             websiteBar.setStatusId(Integer.parseInt(status));
         }
 

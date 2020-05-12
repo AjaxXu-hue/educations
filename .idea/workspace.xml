@@ -3,14 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="17cb7163-4efc-4771-a270-04a5149ee16c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/SystemRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/SystemRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/user/User_Ext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/user/User_Ext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/CustomMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/CustomMetadataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/WebsiteBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/WebsiteBarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/WebsiteLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/WebsiteLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/securityLogin/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/securityLogin/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/PlatformService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/PlatformService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/securityLogin/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ed-system/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ed-system/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/SystemRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/SystemRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/CustomMetadataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/CustomMetadataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/WebsiteBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/WebsiteBarController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/WebsiteLinkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/WebsiteLinkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/MenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/MenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +68,9 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="education" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -88,11 +104,12 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/GIT/Git/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo134" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15722656" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="com.sjhy.plugin.ui.TypeMapperSetting" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -201,6 +218,9 @@
       <workItem from="1589171364415" duration="1204000" />
       <workItem from="1589176348229" duration="5812000" />
       <workItem from="1589182565439" duration="458000" />
+      <workItem from="1589183179616" duration="6871000" />
+      <workItem from="1589201054675" duration="17319000" />
+      <workItem from="1589257538472" duration="1741000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,7 @@ import pojo.user.Platform;
 
 import java.util.List;
 
+//平台信息
 public interface PlatformService {
 
     //通过ID查询单条数据

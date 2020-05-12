@@ -1,6 +1,6 @@
 package org.demo.system.config;
 
-import org.demo.system.service.MenuService;
+import org.demo.system.service.securityLogin.MenuService;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;

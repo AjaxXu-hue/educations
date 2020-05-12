@@ -1,7 +1,7 @@
 package org.demo.system.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.demo.system.service.UserService;
+import org.demo.system.service.securityLogin.UserService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.LockedException;
