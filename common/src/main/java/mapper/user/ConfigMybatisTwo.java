@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(value = "mapper.user" , sqlSessionFactoryRef = "sqlSessionFactoryBean2")
-public class MybatisConfigTwo {
+public class ConfigMybatisTwo {
 
     @Autowired
     @Qualifier("dataUser")

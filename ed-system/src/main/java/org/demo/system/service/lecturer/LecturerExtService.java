@@ -42,7 +42,7 @@ public interface LecturerExtService {
     int insertLectureBank(LecturerExt lecturerExt);
 
     /**
-     * 修改数据
+     * 通过讲师用户编码修改数据
      *
      * @param lecturerExt 实例对象
      * @return 影响行数

@@ -88,7 +88,7 @@
   } ],
   "pkColumn" : null,
   "otherColumn" : null,
-  "savePackageName" : "pojo.user",
-  "savePath" : "./common/src/main/java/pojo/user",
+  "savePackageName" : "mapper.user",
+  "savePath" : "./common/src/main/java/mapper/user",
   "saveModelName" : "common"
 }

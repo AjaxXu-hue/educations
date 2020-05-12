@@ -31,4 +31,11 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
+    @Bean(name = "dataCourse")
+    @Qualifier("dataCourse")
+    @ConfigurationProperties(prefix="spring.datasource.course")
+    public DataSource dataCourse() {
+        return DataSourceBuilder.create().build();
+    }
+
 }

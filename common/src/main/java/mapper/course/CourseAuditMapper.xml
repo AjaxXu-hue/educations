@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.course.CourseAuditMapper">
+
+    <resultMap type="pojo.course.CourseAudit" id="CourseAuditMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="lecturerUserNo" column="lecturer_user_no" jdbcType="INTEGER"/>
+        <result property="courseName" column="course_name" jdbcType="VARCHAR"/>
+        <result property="categoryId1" column="category_id1" jdbcType="INTEGER"/>
+        <result property="categoryId2" column="category_id2" jdbcType="INTEGER"/>
+        <result property="categoryId3" column="category_id3" jdbcType="INTEGER"/>
+        <result property="courseLogo" column="course_logo" jdbcType="VARCHAR"/>
+        <result property="courseOriginal" column="course_original" jdbcType="NUMERIC"/>
+        <result property="isFree" column="is_free" jdbcType="INTEGER"/>
+        <result property="statusId" column="status_id" jdbcType="INTEGER"/>
+        <result property="isPutaway" column="is_putaway" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="courseDiscount" column="course_discount" jdbcType="NUMERIC"/>
+        <result property="introduceId" column="introduce_id" jdbcType="INTEGER"/>
+        <result property="auditOpinion" column="audit_opinion" jdbcType="VARCHAR"/>
+        <result property="auditStatus" column="audit_status" jdbcType="INTEGER"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="CourseAuditMap">
+        select
+          id, lecturer_user_no, course_name, category_id1, category_id2, category_id3, course_logo, course_original, is_free, status_id, is_putaway, sort, gmt_create, course_discount, introduce_id, audit_opinion, audit_status, gmt_modified
+        from education_course.course_audit
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="CourseAuditMap">
+        select
+          id, lecturer_user_no, course_name, category_id1, category_id2, category_id3, course_logo, course_original, is_free, status_id, is_putaway, sort, gmt_create, course_discount, introduce_id, audit_opinion, audit_status, gmt_modified
+        from education_course.course_audit
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="lecturerUserNo != null">
+                and lecturer_user_no = #{lecturerUserNo}
+            </if>
+            <if test="courseName != null and courseName != ''">
+                and course_name = #{courseName}
+            </if>
+            <if test="categoryId1 != null">
+                and category_id1 = #{categoryId1}
+            </if>
+            <if test="categoryId2 != null">
+                and category_id2 = #{categoryId2}
+            </if>
+            <if test="categoryId3 != null">
+                and category_id3 = #{categoryId3}
+            </if>
+            <if test="courseLogo != null and courseLogo != ''">
+                and course_logo = #{courseLogo}
+            </if>
+            <if test="courseOriginal != null">
+                and course_original = #{courseOriginal}
+            </if>
+            <if test="isFree != null">
+                and is_free = #{isFree}
+            </if>
+            <if test="statusId != null">
+                and status_id = #{statusId}
+            </if>
+            <if test="isPutaway != null">
+                and is_putaway = #{isPutaway}
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+            <if test="courseDiscount != null">
+                and course_discount = #{courseDiscount}
+            </if>
+            <if test="introduceId != null">
+                and introduce_id = #{introduceId}
+            </if>
+            <if test="auditOpinion != null and auditOpinion != ''">
+                and audit_opinion = #{auditOpinion}
+            </if>
+            <if test="auditStatus != null">
+                and audit_status = #{auditStatus}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertCoAuditInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_course.course_audit(lecturer_user_no, course_name, category_id1, category_id2, category_id3, course_logo, course_original, is_free, status_id, is_putaway, sort, gmt_create, course_discount, introduce_id, audit_opinion, audit_status, gmt_modified)
+        values (#{lecturerUserNo}, #{courseName}, #{categoryId1}, #{categoryId2}, #{categoryId3}, #{courseLogo}, #{courseOriginal}, #{isFree}, #{statusId}, #{isPutaway}, #{sort}, #{gmtCreate}, #{courseDiscount}, #{introduceId}, #{auditOpinion}, #{auditStatus}, #{gmtModified})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateCoAuditInfo">
+        update education_course.course_audit
+        <set>
+            <if test="lecturerUserNo != null">
+                lecturer_user_no = #{lecturerUserNo},
+            </if>
+            <if test="courseName != null and courseName != ''">
+                course_name = #{courseName},
+            </if>
+            <if test="categoryId1 != null">
+                category_id1 = #{categoryId1},
+            </if>
+            <if test="categoryId2 != null">
+                category_id2 = #{categoryId2},
+            </if>
+            <if test="categoryId3 != null">
+                category_id3 = #{categoryId3},
+            </if>
+            <if test="courseLogo != null and courseLogo != ''">
+                course_logo = #{courseLogo},
+            </if>
+            <if test="courseOriginal != null">
+                course_original = #{courseOriginal},
+            </if>
+            <if test="isFree != null">
+                is_free = #{isFree},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId},
+            </if>
+            <if test="isPutaway != null">
+                is_putaway = #{isPutaway},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="courseDiscount != null">
+                course_discount = #{courseDiscount},
+            </if>
+            <if test="introduceId != null">
+                introduce_id = #{introduceId},
+            </if>
+            <if test="auditOpinion != null and auditOpinion != ''">
+                audit_opinion = #{auditOpinion},
+            </if>
+            <if test="auditStatus != null">
+                audit_status = #{auditStatus},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_course.course_audit where id = #{id}
+    </delete>
+
+</mapper>

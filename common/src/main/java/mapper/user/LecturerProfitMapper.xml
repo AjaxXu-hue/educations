@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.user.LecturerProfitMapper">
+
+    <resultMap type="pojo.user.LecturerProfit" id="LecturerProfitMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="lecturerUserNo" column="lecturer_user_no" jdbcType="INTEGER"/>
+        <result property="bankCardNo" column="bank_card_no" jdbcType="VARCHAR"/>
+        <result property="bankName" column="bank_name" jdbcType="VARCHAR"/>
+        <result property="bankBranchName" column="bank_branch_name" jdbcType="VARCHAR"/>
+        <result property="bankUserName" column="bank_user_name" jdbcType="VARCHAR"/>
+        <result property="bankIdCardNo" column="bank_id_card_no" jdbcType="VARCHAR"/>
+        <result property="lecturerProfit" column="lecturer_profit" jdbcType="NUMERIC"/>
+        <result property="platformProfit" column="platform_profit" jdbcType="NUMERIC"/>
+        <result property="profitStatus" column="profit_status" jdbcType="INTEGER"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="lecturerName" column="lecturer_name" jdbcType="VARCHAR"/>
+        <result property="lecturerMobile" column="lecturer_mobile" jdbcType="VARCHAR"/>
+        <result property="lecturerEmail" column="lecturer_email" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="LecturerProfitMap">
+        select
+          id, lecturer_user_no, bank_card_no, bank_name, bank_branch_name, bank_user_name, bank_id_card_no, lecturer_profit, platform_profit, profit_status, remark, gmt_create
+        from education_user.lecturer_profit
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="LecturerProfitMap">
+        SELECT pro.* , le.`lecturer_name` , le.`lecturer_mobile` , le.`lecturer_email`
+        FROM education_user.`lecturer_profit` pro , education_user.`lecturer` le
+        WHERE pro.`lecturer_user_no` = le.`lecturer_user_no`
+            <if test="lecturerName != null and lecturerName != ''">
+                AND le.`lecturer_name` like CONCAT ('%',#{lecturerName},'%')
+            </if>
+            <if test="id != null">
+                and pro.id = #{id}
+            </if>
+            <if test="lecturerUserNo != null">
+                and pro.lecturer_user_no = #{lecturerUserNo}
+            </if>
+            <if test="bankCardNo != null and bankCardNo != ''">
+                and pro.bank_card_no = #{bankCardNo}
+            </if>
+            <if test="bankName != null and bankName != ''">
+                and pro.bank_name = #{bankName}
+            </if>
+            <if test="bankBranchName != null and bankBranchName != ''">
+                and pro.bank_branch_name = #{bankBranchName}
+            </if>
+            <if test="bankUserName != null and bankUserName != ''">
+                and pro.bank_user_name = #{bankUserName}
+            </if>
+            <if test="bankIdCardNo != null and bankIdCardNo != ''">
+                and pro.bank_id_card_no = #{bankIdCardNo}
+            </if>
+            <if test="lecturerProfit != null">
+                and pro.lecturer_profit = #{lecturerProfit}
+            </if>
+            <if test="platformProfit != null">
+                and pro.platform_profit = #{platformProfit}
+            </if>
+            <if test="profitStatus != null and profitStatus != ''">
+                and pro.profit_status = #{profitStatus}
+            </if>
+            <if test="remark != null and remark != ''">
+                and pro.remark = #{remark}
+            </if>
+            <if test="gmtCreate != null">
+                and pro.`gmt_create` BETWEEN #{gmtCreate} AND #{gmtCreateOver}
+            </if>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertLeProfit" keyProperty="id" useGeneratedKeys="true">
+        insert into education_user.lecturer_profit(lecturer_user_no, bank_card_no, bank_name, bank_branch_name, bank_user_name, bank_id_card_no, lecturer_profit, platform_profit, profit_status, remark, gmt_create)
+        values (#{lecturerUserNo}, #{bankCardNo}, #{bankName}, #{bankBranchName}, #{bankUserName}, #{bankIdCardNo}, #{lecturerProfit}, #{platformProfit}, #{profitStatus}, #{remark}, #{gmtCreate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateLeProfit">
+        update education_user.lecturer_profit
+        <set>
+            <if test="bankCardNo != null and bankCardNo != ''">
+                bank_card_no = #{bankCardNo},
+            </if>
+            <if test="bankName != null and bankName != ''">
+                bank_name = #{bankName},
+            </if>
+            <if test="bankBranchName != null and bankBranchName != ''">
+                bank_branch_name = #{bankBranchName},
+            </if>
+            <if test="bankUserName != null and bankUserName != ''">
+                bank_user_name = #{bankUserName},
+            </if>
+            <if test="bankIdCardNo != null and bankIdCardNo != ''">
+                bank_id_card_no = #{bankIdCardNo},
+            </if>
+            <if test="lecturerProfit != null">
+                lecturer_profit = #{lecturerProfit},
+            </if>
+            <if test="platformProfit != null">
+                platform_profit = #{platformProfit},
+            </if>
+            <if test="profitStatus != null">
+                profit_status = #{profitStatus},
+            </if>
+            <if test="remark != null and remark != ''">
+                remark = #{remark},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+        </set>
+        where lecturer_user_no = #{lecturerUserNo}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_user.lecturer_profit where id = #{id}
+    </delete>
+
+</mapper>

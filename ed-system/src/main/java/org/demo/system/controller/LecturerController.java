@@ -78,8 +78,6 @@ public class LecturerController {
     public Dto updateInfo(@RequestBody Lecturer lecturer){
         lecturer.setGmtModified(new Date());
 
-        System.out.println(lecturer);
-
         int count = lecturerService.updateLecturerInfo(lecturer);
         if(count > 0){
             return DtoUtil.returnSuccess("修改成功!!");

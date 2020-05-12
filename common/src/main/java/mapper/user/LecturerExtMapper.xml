@@ -100,21 +100,18 @@
         values (#{lecturerUserNo}, #{totalIncome}, #{historyMoney}, #{enableBalances}, #{freezeBalances}, #{bankCardNo}, #{bankName}, #{bankBranchName}, #{bankUserName}, #{bankIdCardNo}, #{sort}, #{sign}, #{statusId}, #{gmtCreate}, #{gmtModified})
     </insert>
 
-    <!--通过主键修改数据-->
+    <!--通过讲师用户编码修改数据-->
     <update id="updateLectureBank">
         update education_user.lecturer_ext
         <set>
-            <if test="lecturerUserNo != null">
-                lecturer_user_no = #{lecturerUserNo},
-            </if>
             <if test="totalIncome != null">
-                total_income = #{totalIncome},
+                total_income = total_income + #{totalIncome},
             </if>
             <if test="historyMoney != null">
-                history_money = #{historyMoney},
+                history_money =  history_money + #{historyMoney},
             </if>
             <if test="enableBalances != null">
-                enable_balances = #{enableBalances},
+                enable_balances = enable_balances + #{enableBalances},
             </if>
             <if test="freezeBalances != null">
                 freeze_balances = #{freezeBalances},
@@ -150,7 +147,7 @@
                 gmt_modified = #{gmtModified},
             </if>
         </set>
-        where id = #{id}
+        where lecturer_user_no = #{lecturerUserNo}
     </update>
 
     <!--通过主键删除-->

@@ -34,6 +34,7 @@ public class LecturerExtServiceImpl implements LecturerExtService{
         return lecturerExtMapper.insertLectureBank(lecturerExt);
     }
 
+    //通过讲师用户编码修改数据
     @Override
     public int updateLectureBank(LecturerExt lecturerExt) {
         return lecturerExtMapper.updateLectureBank(lecturerExt);

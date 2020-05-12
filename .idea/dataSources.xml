@@ -13,5 +13,11 @@
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/education_user</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="education_course@localhost [2]" uuid="bb0014d8-fe7f-4311-bec5-7ffe2d43223e">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/education_course</jdbc-url>
+    </data-source>
   </component>
 </project>
