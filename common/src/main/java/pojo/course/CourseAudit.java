@@ -80,6 +80,9 @@ public class CourseAudit implements Serializable {
     */
     private Date gmtModified;
 
+    //课程简介
+    private String introduce;
+
 
     public Long getId() {
         return id;
@@ -225,4 +228,36 @@ public class CourseAudit implements Serializable {
         this.gmtModified = gmtModified;
     }
 
+    public String getIntroduce() {
+        return introduce;
+    }
+
+    public void setIntroduce(String introduce) {
+        this.introduce = introduce;
+    }
+
+    @Override
+    public String toString() {
+        return "CourseAudit{" +
+                "id=" + id +
+                ", lecturerUserNo=" + lecturerUserNo +
+                ", courseName='" + courseName + '\'' +
+                ", categoryId1=" + categoryId1 +
+                ", categoryId2=" + categoryId2 +
+                ", categoryId3=" + categoryId3 +
+                ", courseLogo='" + courseLogo + '\'' +
+                ", courseOriginal=" + courseOriginal +
+                ", isFree=" + isFree +
+                ", statusId=" + statusId +
+                ", isPutaway=" + isPutaway +
+                ", sort=" + sort +
+                ", gmtCreate=" + gmtCreate +
+                ", courseDiscount=" + courseDiscount +
+                ", introduceId=" + introduceId +
+                ", auditOpinion='" + auditOpinion + '\'' +
+                ", auditStatus=" + auditStatus +
+                ", gmtModified=" + gmtModified +
+                ", introduce='" + introduce + '\'' +
+                '}';
+    }
 }

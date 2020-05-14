@@ -8,9 +8,7 @@ import org.demo.system.service.course.CourseService;
 import org.springframework.web.bind.annotation.*;
 import pojo.Dto;
 import pojo.course.Course;
-import pojo.course.CourseCategory;
-import pojo.trans.UpdateCourseListPut;
-import pojo.trans.UpdateCourseType;
+import pojo.com.UpdateCourseListPut;
 import utils.DtoUtil;
 
 import javax.annotation.Resource;

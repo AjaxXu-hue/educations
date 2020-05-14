@@ -1,30 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="solr" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="17cb7163-4efc-4771-a270-04a5149ee16c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/EasyCodeConfig/education_user-lecturer_profit.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EasyCodeConfig/education_user-lecturer_profit.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/mapper/user/LecturerExtMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/mapper/user/LecturerExtMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/mapper/user/MybatisConfigTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/mapper/user/ConfigMybatisTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/user/LecturerProfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/user/LecturerProfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/mapper/user/LecturerExtMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/mapper/user/LecturerExtMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/mapper/user/MybatisConfigTwo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/user/LecturerProfit.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/pojo/user/LecturerProfit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/SystemRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/SystemRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/DataSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/LecturerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/LecturerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/lecturer/LecturerExtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/lecturer/LecturerExtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/lecturer/LecturerExtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/lecturer/LecturerExtServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/mapper/course/CourseAuditMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/mapper/course/CourseAuditMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/mapper/user/UserExtMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/mapper/user/UserExtMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/mapper/user/UserExtMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/mapper/user/UserExtMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/course/CourseAudit.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/course/CourseAudit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/trans/InsertCourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/com/InsertCourseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/trans/UpdateCourseListPut.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/com/UpdateCourseListPut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/pojo/trans/UpdateCourseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/pojo/com/UpdateCourseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/META-INF/common.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/trans/InsertCourseType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/trans/UpdateCourseListPut.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/pojo/trans/UpdateCourseType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/jackson-datatype-jdk8-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/jackson-datatype-jsr310-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/jackson-module-parameter-names-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-jdbc-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-json-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-security-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-tomcat-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-validation-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-2.2.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-context-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-core-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-jcl-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-jdbc-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-web-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-core-9.0.31.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-el-9.0.31.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-biz/target/ed-biz-1.0-SNAPSHOT/WEB-INF/lib/tomcat-embed-websocket-9.0.31.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-instructor/target/ed-instructor-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-instructor/target/ed-instructor-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-login/target/ed-login-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-login/target/ed-login-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-order/target/ed-order-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-order/target/ed-order-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-payment/target/ed-payment-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-payment/target/ed-payment-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-search/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-search/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-search/target/ed-search-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-search/target/ed-search-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-search/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ed-search/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/CourseAuditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/CourseAuditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/CourseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/CourseCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/WebsiteBarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/WebsiteBarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/course/CourseAuditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/java/org/demo/system/service/course/CourseAuditServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ed-system/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/SystemRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/SystemRun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/DataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/DataSourceConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/LecturerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/LecturerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/lecturer/LecturerExtServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/lecturer/LecturerExtServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/META-INF/edsystem.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/CourseCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/CourseCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/controller/CourseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/WebsiteBarServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/classes/org/demo/system/service/WebsiteBarServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/ed-system-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/ed-system-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ed-system/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ed-system/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,37 +150,37 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo134" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ed-biz/src/main/java/org/biz/service" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15722656" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="com.sjhy.plugin.ui.TypeMapperSetting" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\springboots\educations\ed-biz\src\main\java\org\biz\service" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
+      <recent name="F:\springboots\educations\ed-system\src\main\java\org\demo\system\mapper" />
+      <recent name="F:\springboots\educations\ed-system\src\main\java" />
+      <recent name="F:\springboots\educations\common\src\main\java\mapper\user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.biz.swagger" />
+      <recent name="org.search.swagger" />
+      <recent name="org.search.service" />
+      <recent name="org.demo.system.service.order" />
+      <recent name="pojo.com" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\springboots\educations\common\src\main\java\mapper\course" />
       <recent name="F:\springboots\educations\common\src\main\java\mapper\course\dao" />
       <recent name="F:\springboots\educations\common\src\main\java\mapper\user" />
       <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
       <recent name="F:\springboots\educations\ed-system\src\main\java\org\demo\system\mapper" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pojo.trans" />
-      <recent name="mapper.course" />
-      <recent name="org.demo.system.config" />
-      <recent name="mapper.user" />
-      <recent name="mapper.system" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\springboots\educations\common\src\main\java\mapper\system" />
-      <recent name="F:\springboots\educations\ed-system\src\main\java\org\demo\system\mapper" />
-      <recent name="F:\springboots\educations\ed-system\src\main\java" />
-      <recent name="F:\springboots\educations\common\src\main\java\mapper\user" />
-      <recent name="F:\springboots\educations\common\src\main\java\mapper\education-user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -143,7 +195,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SystemRun">
+  <component name="RunManager" selected="Spring Boot.SolrRun">
     <configuration name="BizRun" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="edbiz" />
       <extension name="coverage">
@@ -153,6 +205,19 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.biz.BizRun" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SolrRun" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="edsearch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.search.SolrRun" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,8 +235,106 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_education" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64037" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64038" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BizRun" />
+      <item itemvalue="Spring Boot.SolrRun" />
+      <item itemvalue="Spring Boot.SystemRun" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.SolrRun" />
         <item itemvalue="Spring Boot.SystemRun" />
         <item itemvalue="Spring Boot.BizRun" />
       </list>
@@ -218,6 +381,18 @@
       <workItem from="1589263421144" duration="11347000" />
       <workItem from="1589279613101" duration="5078000" />
       <workItem from="1589299303473" duration="10581000" />
+      <workItem from="1589341112331" duration="1657000" />
+      <workItem from="1589343094303" duration="2457000" />
+      <workItem from="1589348337498" duration="14207000" />
+      <workItem from="1589366636117" duration="6319000" />
+      <workItem from="1589383914673" duration="3150000" />
+      <workItem from="1589435956103" duration="4982000" />
+      <workItem from="1589442939419" duration="134000" />
+      <workItem from="1589468151713" duration="552000" />
+      <workItem from="1589471974603" duration="6996000" />
+      <workItem from="1589479392848" duration="388000" />
+      <workItem from="1589480687665" duration="575000" />
+      <workItem from="1589481465523" duration="448000" />
     </task>
     <servers />
   </component>

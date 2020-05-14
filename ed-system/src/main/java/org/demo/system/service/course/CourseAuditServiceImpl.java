@@ -1,5 +1,6 @@
 package org.demo.system.service.course;
 
+import mapper.course.CourseAuditMapper;
 import org.springframework.stereotype.Service;
 import pojo.course.CourseAudit;
 
@@ -11,30 +12,30 @@ import java.util.List;
 public class CourseAuditServiceImpl implements CourseAuditService{
 
     @Resource
-    CourseAuditService courseAuditService;
+    CourseAuditMapper courseAuditMapper;
 
     @Override
     public CourseAudit findById(Long id) {
-        return courseAuditService.findById(id);
+        return courseAuditMapper.findById(id);
     }
 
     @Override
     public List<CourseAudit> findAll(CourseAudit courseAudit) {
-        return courseAuditService.findAll(courseAudit);
+        return courseAuditMapper.findAll(courseAudit);
     }
 
     @Override
     public int insertCoAuditInfo(CourseAudit courseAudit) {
-        return courseAuditService.insertCoAuditInfo(courseAudit);
+        return courseAuditMapper.insertCoAuditInfo(courseAudit);
     }
 
     @Override
     public int updateCoAuditInfo(CourseAudit courseAudit) {
-        return courseAuditService.updateCoAuditInfo(courseAudit);
+        return courseAuditMapper.updateCoAuditInfo(courseAudit);
     }
 
     @Override
     public int deleteById(Long id) {
-        return courseAuditService.deleteById(id);
+        return courseAuditMapper.deleteById(id);
     }
 }

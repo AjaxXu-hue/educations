@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.course.AdvMapper">
+
+    <resultMap type="pojo.course.Adv" id="AdvMap">
+        <result property="id" column="id" jdbcType="OTHER"/>
+        <result property="advTitle" column="adv_title" jdbcType="VARCHAR"/>
+        <result property="advImg" column="adv_img" jdbcType="VARCHAR"/>
+        <result property="advUrl" column="adv_url" jdbcType="VARCHAR"/>
+        <result property="advTarget" column="adv_target" jdbcType="VARCHAR"/>
+        <result property="advLocation" column="adv_location" jdbcType="OTHER"/>
+        <result property="statusId" column="status_id" jdbcType="OTHER"/>
+        <result property="platShow" column="plat_show" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="OTHER"/>
+        <result property="beginTime" column="begin_time" jdbcType="TIMESTAMP"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="AdvMap">
+        select
+          id, adv_title, adv_img, adv_url, adv_target, adv_location, status_id, plat_show, sort, begin_time, end_time, gmt_create, gmt_modified
+        from education_course.adv
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="AdvMap">
+        select
+          id, adv_title, adv_img, adv_url, adv_target, adv_location, status_id, plat_show, sort, begin_time, end_time, gmt_create, gmt_modified
+        from education_course.adv
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="advTitle != null and advTitle != ''">
+                and adv_title like CONCAT ('%',#{advTitle},'%')
+            </if>
+            <if test="statusId != null and statusId != ''">
+                and status_id = #{statusId}
+            </if>
+            <if test="advImg != null and advImg != ''">
+                and adv_img = #{advImg}
+            </if>
+            <if test="advUrl != null and advUrl != ''">
+                and adv_url = #{advUrl}
+            </if>
+            <if test="advTarget != null and advTarget != ''">
+                and adv_target = #{advTarget}
+            </if>
+            <if test="advLocation != null">
+                and adv_location = #{advLocation}
+            </if>
+            <if test="statusId != null">
+                and status_id = #{statusId}
+            </if>
+            <if test="platShow != null">
+                and plat_show = #{platShow}
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            <if test="beginTime != null">
+                and begin_time = #{beginTime}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertAdvInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_course.adv(adv_title, adv_img, adv_url, adv_target, sort, begin_time, end_time, gmt_create, gmt_modified)
+        values (#{advTitle}, #{advImg}, #{advUrl}, #{advTarget}, #{sort}, #{beginTime}, #{endTime}, #{gmtCreate}, #{gmtModified})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateAdvInfo">
+        update education_course.adv
+        <set>
+            <if test="advTitle != null and advTitle != ''">
+                adv_title = #{advTitle},
+            </if>
+            <if test="advImg != null and advImg != ''">
+                adv_img = #{advImg},
+            </if>
+            <if test="advUrl != null and advUrl != ''">
+                adv_url = #{advUrl},
+            </if>
+            <if test="advTarget != null and advTarget != ''">
+                adv_target = #{advTarget},
+            </if>
+            <if test="advLocation != null">
+                adv_location = #{advLocation},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId},
+            </if>
+            <if test="platShow != null">
+                plat_show = #{platShow},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="beginTime != null">
+                begin_time = #{beginTime},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_course.adv where id = #{id}
+    </delete>
+
+</mapper>

@@ -8,8 +8,8 @@ import org.demo.system.service.course.CourseCategoryService;
 import org.springframework.web.bind.annotation.*;
 import pojo.Dto;
 import pojo.course.CourseCategory;
-import pojo.trans.InsertCourseType;
-import pojo.trans.UpdateCourseType;
+import pojo.com.InsertCourseType;
+import pojo.com.UpdateCourseType;
 import utils.DtoUtil;
 
 import javax.annotation.Resource;

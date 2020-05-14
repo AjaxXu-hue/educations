@@ -22,7 +22,7 @@
         select
           id, user_no, nickname, mobile, age, sex, head_img_url, user_type, status_id, remark, gmt_create, gmt_modified
         from education_user.user_ext
-        where id = #{id}
+        where user_no = #{id}
     </select>
 
     <!--查询指定行数据-->
