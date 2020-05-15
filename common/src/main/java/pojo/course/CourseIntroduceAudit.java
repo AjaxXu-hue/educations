@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 课程介绍信息-审核(CourseIntroduceAudit)实体类
  */
-public class CourseIntroduceAudit implements Serializable {
+public class CourseIntroduceAudit{
     /**
     * 主键
     */

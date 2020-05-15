@@ -1,4 +1,4 @@
-package org.biz.service;
+package org.biz.service.userInfo;
 
 import mapper.user.UserExtMapper;
 import org.springframework.stereotype.Service;

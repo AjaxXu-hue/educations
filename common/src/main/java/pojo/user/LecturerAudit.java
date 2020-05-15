@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 讲师信息-审核(LecturerAudit)实体类
  */
 @ApiModel(value = "讲师信息-审核实体类" , description = "讲师信息-审核描述信息")
-public class LecturerAudit implements Serializable {
+public class LecturerAudit {
     //主键
     @ApiModelProperty(value = "编号")
     private Long id;

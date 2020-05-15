@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 讲师提现日志表(LecturerProfit)实体类
  */
-public class LecturerProfit implements Serializable {
+public class LecturerProfit{
     //主键
     private Long id;
 

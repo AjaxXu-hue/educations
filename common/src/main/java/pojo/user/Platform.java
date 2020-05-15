@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 平台信息(Platform)实体类
  */
-public class Platform implements Serializable {
+public class Platform {
     /**
     * 主键
     */

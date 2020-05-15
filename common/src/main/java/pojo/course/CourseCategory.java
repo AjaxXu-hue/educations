@@ -9,7 +9,7 @@ import java.io.Serializable;
  * 课程分类(CourseCategory)实体类
  */
 @ApiModel(value = "课程分类实体类" , description = "课程分类描述信息")
-public class CourseCategory implements Serializable {
+public class CourseCategory {
 
     //主键
     private Long id;

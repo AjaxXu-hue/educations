@@ -4,6 +4,7 @@ pojo\course\Adv.class
 pojo\system\Menu.class
 mapper\system\WebsiteNavMapper.class
 pojo\course\Course.class
+pojo\user\Dictinfo.class
 mapper\course\ConfigMybatisThree.class
 mapper\system\WebsiteLinkMapper.class
 pojo\course\CourseAudit.class
@@ -43,6 +44,7 @@ mapper\user\ConfigMybatisTwo.class
 mapper\user\LecturerExtMapper.class
 pojo\course\CourseIntroduceAudit.class
 mapper\course\AdvMapper.class
+mapper\user\DictinfoUserMapper.class
 pojo\system\WebsiteNavArticle.class
 pojo\com\InsertCourseType.class
 mapper\user\LecturerAuditMapper.class

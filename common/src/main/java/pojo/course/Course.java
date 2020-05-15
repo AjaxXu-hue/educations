@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 课程信息(Course)实体类
  */
-public class Course implements Serializable {
+public class Course {
     /**
     * 主键
     */

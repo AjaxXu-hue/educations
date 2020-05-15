@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 
 @ApiModel(value = "用户教育信息实体类" , description = "用户教育信息描述信息")
-public class UserExt implements Serializable {
+public class UserExt {
     //主键
     @ApiModelProperty(value = "主键")
     private Long id;
@@ -59,6 +59,10 @@ public class UserExt implements Serializable {
     // 修改时间
     @ApiModelProperty(value = "修改时间")
     private String gmtModified;
+
+    //性别
+    @ApiModelProperty(value = "性别")
+    private String sexInfo;
 
 
     public Long getId() {
@@ -155,6 +159,14 @@ public class UserExt implements Serializable {
 
     public void setGmtModified(String gmtModified) {
         this.gmtModified = gmtModified;
+    }
+
+    public String getSexInfo() {
+        return sexInfo;
+    }
+
+    public void setSexInfo(String sexInfo) {
+        this.sexInfo = sexInfo;
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 广告信息(Adv)实体类
  */
 @ApiModel(value = "广告信息(Adv)实体类" , description = "广告信息(Adv)实体类")
-public class Adv implements Serializable {
+public class Adv  {
     //主键
 //    @ApiModelProperty("编号")
     private Long id;

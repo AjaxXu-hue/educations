@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 订单信息表(OrderInfo)实体类
  */
-public class OrderInfo implements Serializable {
+public class OrderInfo {
     /**
     * 主键
     */

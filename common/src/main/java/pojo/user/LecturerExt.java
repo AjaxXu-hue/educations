@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * 讲师账户信息表(LecturerExt)实体类
  */
-public class LecturerExt implements Serializable {
+public class LecturerExt {
     /**
     * 主键
     */

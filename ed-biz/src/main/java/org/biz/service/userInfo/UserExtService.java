@@ -1,4 +1,4 @@
-package org.biz.service;
+package org.biz.service.userInfo;
 
 import pojo.user.UserExt;
 
