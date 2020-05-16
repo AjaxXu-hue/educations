@@ -15,6 +15,7 @@ pojo\user\LecturerExt.class
 pojo\user\Platform.class
 mapper\user\LecturerProfitMapper.class
 mapper\system\MenuMapper.class
+mapper\user\UserMapper.class
 mapper\user\PlatformMapper.class
 pojo\system\WebsiteNav.class
 utils\DtoUtil.class
@@ -27,11 +28,13 @@ pojo\user\User.class
 mapper\system\WebsiteBarMapper.class
 pojo\course\CourseCategory.class
 mapper\system\WebsiteNavArticleMapper.class
+pojo\com\UserTokenVO.class
 pojo\system\Dictinfo.class
 pojo\user\LecturerAudit.class
 mapper\user\LecturerMapper.class
 mapper\user\UserExtMapper.class
 mapper\course\OrderInfoMapper.class
+utils\MD5.class
 pojo\system\WebsiteBar.class
 pojo\user\UserExt.class
 pojo\com\UpdateCourseAudit.class

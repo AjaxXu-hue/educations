@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 
 @ApiModel(value = "用户教育信息实体类" , description = "用户教育信息描述信息")
-public class UserExt {
+public class UserExt implements Serializable{
     //主键
     @ApiModelProperty(value = "主键")
     private Long id;
@@ -27,6 +27,10 @@ public class UserExt {
     //用户手机
     @ApiModelProperty(value = "用户手机")
     private String mobile;
+
+    //邮箱
+    @ApiModelProperty(value = "email")
+    private String email;
 
     // 年龄
     @ApiModelProperty(value = "年龄")
@@ -123,6 +127,14 @@ public class UserExt {
 
     public Integer getUserType() {
         return userType;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setUserType(Integer userType) {

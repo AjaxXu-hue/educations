@@ -1,57 +1,73 @@
 package pojo.user;
 
 import java.util.Date;
+import java.io.Serializable;
 
-//用户基本信息
-public class User {
-    private Integer id;
-    private Date gmt_create;//创建时间
-    private Date gmt_modified;//修改时间
-    private boolean status_id;//状态(1:正常，0:禁用)
-    private Integer user_no;//用户编号
-    private String mobile;//手机号码
-    private String mobile_salt;//密码盐
-    private String mobile_psw;//登录密码
-    private String user_source;//用户来源(client_id)
+/**
+ * 用户基本信息(User)实体类
+ */
+public class User implements Serializable {
+    //主键
+    private Long id;
 
-    public Integer getId() {
+    //状态(1:正常，0:禁用)
+    private Integer statusId;
+
+    //用户编号
+    private Long userNo;
+
+    //手机号码
+    private String mobile;
+
+    //邮箱
+    private String email;
+
+    //密码盐
+    private String mobileSalt;
+
+    //登录密码
+    private String mobilePsw;
+    
+    //用户来源(client_id)
+    private String userSource;
+
+    //创建时间
+    private Date gmtCreate;
+
+    //修改时间
+    private Date gmtModified;
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Date getGmt_create() {
-        return gmt_create;
+    public Integer getStatusId() {
+        return statusId;
     }
 
-    public void setGmt_create(Date gmt_create) {
-        this.gmt_create = gmt_create;
+    public void setStatusId(Integer statusId) {
+        this.statusId = statusId;
     }
 
-    public Date getGmt_modified() {
-        return gmt_modified;
+    public Long getUserNo() {
+        return userNo;
     }
 
-    public void setGmt_modified(Date gmt_modified) {
-        this.gmt_modified = gmt_modified;
+    public void setUserNo(Long userNo) {
+        this.userNo = userNo;
     }
 
-    public boolean isStatus_id() {
-        return status_id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setStatus_id(boolean status_id) {
-        this.status_id = status_id;
-    }
-
-    public Integer getUser_no() {
-        return user_no;
-    }
-
-    public void setUser_no(Integer user_no) {
-        this.user_no = user_no;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getMobile() {
@@ -62,27 +78,44 @@ public class User {
         this.mobile = mobile;
     }
 
-    public String getMobile_salt() {
-        return mobile_salt;
+    public String getMobileSalt() {
+        return mobileSalt;
     }
 
-    public void setMobile_salt(String mobile_salt) {
-        this.mobile_salt = mobile_salt;
+    public void setMobileSalt(String mobileSalt) {
+        this.mobileSalt = mobileSalt;
     }
 
-    public String getMobile_psw() {
-        return mobile_psw;
+    public String getMobilePsw() {
+        return mobilePsw;
     }
 
-    public void setMobile_psw(String mobile_psw) {
-        this.mobile_psw = mobile_psw;
+    public void setMobilePsw(String mobilePsw) {
+        this.mobilePsw = mobilePsw;
     }
 
-    public String getUser_source() {
-        return user_source;
+    public String getUserSource() {
+        return userSource;
     }
 
-    public void setUser_source(String user_source) {
-        this.user_source = user_source;
+    public void setUserSource(String userSource) {
+        this.userSource = userSource;
     }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
 }

@@ -7,6 +7,7 @@
         <result property="userNo" column="user_no" jdbcType="INTEGER"/>
         <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
         <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
         <result property="age" column="age" jdbcType="INTEGER"/>
         <result property="sex" column="sex" jdbcType="INTEGER"/>
         <result property="headImgUrl" column="head_img_url" jdbcType="VARCHAR"/>
@@ -19,24 +20,21 @@
 
     <!--查询单个-->
     <select id="findById" resultMap="UserExtMap">
-        select
-          id, user_no, nickname, mobile, age, sex, head_img_url, user_type, status_id, remark, gmt_create, gmt_modified
+        select *
         from education_user.user_ext
         where user_no = #{id}
     </select>
 
     <!--查询指定行数据-->
     <select id="findAllByLimit" resultMap="UserExtMap">
-        select
-          id, user_no, nickname, mobile, age, sex, head_img_url, user_type, status_id, remark, gmt_create, gmt_modified
+        select *
         from education_user.user_ext
         limit #{offset}, #{limit}
     </select>
 
     <!--通过实体作为筛选条件查询-->
     <select id="findAll" resultMap="UserExtMap">
-        select
-          id, user_no, nickname, mobile, age, sex, head_img_url, user_type, status_id, remark, gmt_create, gmt_modified
+        select *
         from education_user.user_ext
         <where>
             <if test="id != null">
@@ -77,8 +75,8 @@
 
     <!--新增所有列-->
     <insert id="insertUserExtInfo" keyProperty="id" useGeneratedKeys="true">
-        insert into education_user.user_ext(user_no, nickname, mobile, age, sex, head_img_url, status_id, remark, gmt_create, gmt_modified)
-        values (#{userNo}, #{nickname}, #{mobile}, #{age}, #{sex}, #{headImgUrl}, #{statusId}, #{remark}, #{gmtCreate}, #{gmtModified})
+        insert into education_user.user_ext(user_no, nickname, mobile,email, age, sex, head_img_url, status_id, remark, gmt_create, gmt_modified)
+        values (#{userNo}, #{nickname}, #{mobile}, #{email}, #{age}, #{sex}, #{headImgUrl}, #{statusId}, #{remark}, #{gmtCreate}, #{gmtModified})
     </insert>
 
     <!--通过主键修改数据-->
