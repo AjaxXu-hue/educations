@@ -74,15 +74,12 @@
         values (#{userNo}, #{mobile}, #{email}, #{mobileSalt}, #{mobilePsw}, #{userSource}, #{gmtCreate}, #{gmtModified})
     </insert>
 
-    <!--通过主键修改数据-->
+    <!--通过用户编号修改数据-->
     <update id="updateUserInfo">
         update education_user.user
         <set>
             <if test="statusId != null">
                 status_id = #{statusId},
-            </if>
-            <if test="userNo != null">
-                user_no = #{userNo},
             </if>
             <if test="mobile != null and mobile != ''">
                 mobile = #{mobile},
@@ -103,7 +100,7 @@
                 gmt_modified = #{gmtModified},
             </if>
         </set>
-        where id = #{id}
+        where user_no = #{userNo}
     </update>
 
     <!--通过主键删除-->

@@ -26,4 +26,7 @@ public interface LecturerAuditService {
 
     //通过主键删除数据
     int deleteById(Long id);
+
+    //邮件发送
+    void validateCode(String email, String codeInfo);
 }

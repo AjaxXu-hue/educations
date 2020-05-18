@@ -1,12 +1,10 @@
 package com.login.service;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSON;
 import com.login.utils.RedisAPI;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.stereotype.Service;
 import pojo.user.User;
-import pojo.user.UserExt;
 import utils.*;
 
 import javax.annotation.Resource;

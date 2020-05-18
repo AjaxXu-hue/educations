@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+</head>
+<body>
+    订单号：
+    <input id="orderNo" type="text"/>
+    <input type="button" value="支付" id="pay"/>
+    <div id="code">
+
+    </div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="qrcode.js"></script>
+<!--    <script>-->
+<!--        // var path = $("#path").val();-->
+<!--        $.ajax({-->
+<!--            // url: path + "/api/wx/createCode/D1000001202003060206325d8d399",-->
+<!--            url : "api/wx/createCode/20190121112318902",-->
+<!--            method : "get",-->
+<!--            success:function(data){-->
+<!--                new QRCode(document.getElementById("code") , data.data.code_url);-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+    <script type="text/javascript">
+        $("#pay").click(function(){
+            $.ajax({
+                url:"api/wx/createCode/"+$("#orderNo").val(),
+                type:"GET",
+                success:function(data){
+                    //参数1表示图像大小，取值范围1-10；参数2表示质量，取值范围'L','M','Q','H'
+                    var qr = qrcode(10, 'H');
+
+                    qr.addData(data.data.code_url);
+                    qr.make();
+
+                    $("#code").html(qr.createImgTag());
+                    setInterval(query,5000);
+                }
+
+            });
+        });
+
+        function query(){
+            $.ajax({
+                url:"queryOrderStatus/"+$("#orderNo").val(),
+                type:"GET",
+                success:function(data){
+                    console.log(data);
+                    if(data.success=="true"){
+                        location.href="success";
+                        /*?orderNo="+orderNo+"&count="+count+"&roomId="+roomId+"&startTime="+startTime+"&endTime="+endTime*/
+                    }
+                },
+                error:function(e){
+                    console.log(e);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -16,6 +16,9 @@ public class LecturerAuditServiceImpl implements LecturerAuditService{
     @Resource
     LecturerAuditMapper lecturerAuditMapper;
 
+    @Resource
+    LeMailService mailService;
+
     //通过ID查询单条数据
     @Override
     public LecturerAudit findById(Long id) {
@@ -50,5 +53,13 @@ public class LecturerAuditServiceImpl implements LecturerAuditService{
     @Override
     public int deleteById(Long id) {
         return lecturerAuditMapper.deleteById(id);
+    }
+
+    //发送邮箱/(邮箱注册)
+    @Override
+    public void validateCode(String email , String codeInfo) {
+        //发送邮件 发送人、收件人、抄送人、邮件主题、邮件内容
+        mailService.sendMail("1442148219@qq.com" , email , "1453780678@qq.com" ,
+                "领课教育申请邮件通知" , codeInfo);
     }
 }

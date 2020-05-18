@@ -17,6 +17,7 @@
         <result property="platformProfit" column="platform_profit" jdbcType="NUMERIC"/>
         <result property="lecturerProfit" column="lecturer_profit" jdbcType="NUMERIC"/>
         <result property="payType" column="pay_type" jdbcType="INTEGER"/>
+        <result property="payNo" column="pay_no" jdbcType="INTEGER"/>
         <result property="orderStatus" column="order_status" jdbcType="INTEGER"/>
         <result property="remarkCus" column="remark_cus" jdbcType="VARCHAR"/>
         <result property="remark" column="remark" jdbcType="VARCHAR"/>
@@ -27,16 +28,14 @@
 
     <!--查询单个-->
     <select id="findById" resultMap="OrderInfoMap">
-        select
-          id, lecturer_user_no, lecturer_name, user_no, mobile, order_no, course_id, course_name, price_payable, price_discount, price_paid, platform_profit, lecturer_profit, pay_type, order_status, remark_cus, remark, pay_time, gmt_create, gmt_modified
+        select *
         from education_course.order_info
         where id = #{id}
     </select>
 
     <!--通过实体作为筛选条件查询-->
     <select id="findAll" resultMap="OrderInfoMap">
-        select
-          id, lecturer_user_no, lecturer_name, user_no, mobile, order_no, course_id, course_name, price_payable, price_discount, price_paid, platform_profit, lecturer_profit, pay_type, order_status, remark_cus, remark, pay_time, gmt_create, gmt_modified
+        select *
         from education_course.order_info
         <where>
             <if test="id != null">
@@ -104,8 +103,8 @@
 
     <!--新增所有列-->
     <insert id="insertOrderInfo" keyProperty="id" useGeneratedKeys="true">
-        insert into education_course.order_info(lecturer_user_no, lecturer_name, user_no, mobile, order_no, course_id, course_name, price_payable, price_discount, price_paid, platform_profit, lecturer_profit, pay_type, order_status, remark_cus, remark, pay_time, gmt_create, gmt_modified)
-        values (#{lecturerUserNo}, #{lecturerName}, #{userNo}, #{mobile}, #{orderNo}, #{courseId}, #{courseName}, #{pricePayable}, #{priceDiscount}, #{pricePaid}, #{platformProfit}, #{lecturerProfit}, #{payType}, #{orderStatus}, #{remarkCus}, #{remark}, #{payTime}, #{gmtCreate}, #{gmtModified})
+        insert into education_course.order_info(pay_no ,lecturer_user_no, lecturer_name, user_no, mobile, order_no, course_id, course_name, price_payable, price_discount, price_paid, platform_profit, lecturer_profit, pay_type, order_status, remark_cus, remark, pay_time, gmt_create, gmt_modified)
+        values (#{payNo},#{lecturerUserNo}, #{lecturerName}, #{userNo}, #{mobile}, #{orderNo}, #{courseId}, #{courseName}, #{pricePayable}, #{priceDiscount}, #{pricePaid}, #{platformProfit}, #{lecturerProfit}, #{payType}, #{orderStatus}, #{remarkCus}, #{remark}, #{payTime}, #{gmtCreate}, #{gmtModified})
     </insert>
 
     <!--通过主键修改数据-->

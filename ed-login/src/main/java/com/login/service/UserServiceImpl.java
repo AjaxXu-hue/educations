@@ -2,7 +2,6 @@ package com.login.service;
 
 import com.login.utils.RedisAPI;
 import mapper.user.UserMapper;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import pojo.user.User;
 import utils.MD5;

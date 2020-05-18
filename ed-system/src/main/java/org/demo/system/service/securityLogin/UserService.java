@@ -14,20 +14,20 @@ import javax.annotation.Resource;
 public class UserService implements UserDetailsService {
 
     @Resource
-    SysUserMapper userMapper;
+    SysUserMapper sysUserMapper;
 
     //查询用户
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         //查询用户信息
-        SysUser userInfo = userMapper.findSysUserByName(userName);
+        SysUser userInfo = sysUserMapper.findSysUserByName(userName);
         if(null == userInfo){
             throw new UsernameNotFoundException("用户名不存在");
         } else if(userInfo.getDictinfoID() != 1){
             throw new LockedException("用户已被禁用");
         }
         //查询用户的角色信息
-        userInfo.setRoles(userMapper.findSysUserById(userInfo.getId()));
+        userInfo.setRoles(sysUserMapper.findSysUserById(userInfo.getId()));
         return userInfo;
     }
 }

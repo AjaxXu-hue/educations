@@ -63,6 +63,10 @@ public class OrderInfo {
     * 支付方式（关联字典表）
     */
     private Integer payType;
+
+    //交易订单号
+    private String payNo;
+
     /**
     * 订单状态(关联字典表)
     */
@@ -249,4 +253,38 @@ public class OrderInfo {
         this.gmtModified = gmtModified;
     }
 
+    public String getPayNo() {
+        return payNo;
+    }
+
+    public void setPayNo(String payNo) {
+        this.payNo = payNo;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderInfo{" +
+                "id=" + id +
+                ", lecturerUserNo=" + lecturerUserNo +
+                ", lecturerName='" + lecturerName + '\'' +
+                ", userNo=" + userNo +
+                ", mobile='" + mobile + '\'' +
+                ", orderNo=" + orderNo +
+                ", courseId=" + courseId +
+                ", courseName='" + courseName + '\'' +
+                ", pricePayable=" + pricePayable +
+                ", priceDiscount=" + priceDiscount +
+                ", pricePaid=" + pricePaid +
+                ", platformProfit=" + platformProfit +
+                ", lecturerProfit=" + lecturerProfit +
+                ", payType=" + payType +
+                ", payNo=" + payNo +
+                ", orderStatus=" + orderStatus +
+                ", remarkCus='" + remarkCus + '\'' +
+                ", remark='" + remark + '\'' +
+                ", payTime=" + payTime +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                '}';
+    }
 }

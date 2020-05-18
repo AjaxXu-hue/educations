@@ -70,11 +70,12 @@ public class LecturerAuditController {
     public Dto updateAudit(@RequestParam(value = "id" , required = false) String id ,
                            @RequestParam(value = "auditStatus" , required = false) String auditStatus ,
                            @RequestParam(value = "opinion" , required = false) String opinion){
+        //查询讲师信息
+        LecturerAudit lecturerAudit = lecturerAuditService.findById(Long.parseLong(id));
         //判断审核状态
         if(auditStatus.equals("7")){
             //通过
-            //查询讲师信息
-            LecturerAudit lecturerAudit = lecturerAuditService.findById(Long.parseLong(id));
+
             //赋值
             Lecturer lecturer = new Lecturer();
             lecturer.setLecturerUserNo(lecturerAudit.getLecturerUserNo());
@@ -98,6 +99,7 @@ public class LecturerAuditController {
                 return DtoUtil.returnFail("通过失败" , "10040");
             } else {
                 //发送邮件
+                lecturerAuditService.validateCode(lecturerAudit.getLecturerEmail() , "申请成功!!");
             }
         } else {
             //不通过
@@ -106,14 +108,15 @@ public class LecturerAuditController {
                 return DtoUtil.returnSuccess("请填写审核意见");
             }
             //改变状态
-            LecturerAudit lecturerAudit = new LecturerAudit();
-            lecturerAudit.setId(Long.parseLong(id));
-            lecturerAudit.setAuditStatus(Integer.parseInt(auditStatus));
-            lecturerAudit.setAuditOpinion(opinion);
-            int count = lecturerAuditService.updateAuditInfo(lecturerAudit);
+            LecturerAudit lecturerAudit1 = new LecturerAudit();
+            lecturerAudit1.setId(Long.parseLong(id));
+            lecturerAudit1.setAuditStatus(Integer.parseInt(auditStatus));
+            lecturerAudit1.setAuditOpinion(opinion);
+            int count = lecturerAuditService.updateAuditInfo(lecturerAudit1);
 
             if(count > 0){
                 //发送邮件
+                lecturerAuditService.validateCode(lecturerAudit.getLecturerEmail() , "申请失败!!");
             } else {
                 return DtoUtil.returnFail("状态修改失败" , "10040");
             }

@@ -1,6 +1,0 @@
-org\search\service\SolrServiceImpl.class
-org\search\entity\CourseSolr.class
-org\search\Controller\SoleController.class
-org\search\swagger\SwaggerConfig.class
-org\search\SolrRun.class
-org\search\service\SolrService.class
