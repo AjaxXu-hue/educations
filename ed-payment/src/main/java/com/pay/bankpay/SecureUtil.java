@@ -25,7 +25,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 
 import org.apache.commons.codec.binary.Base64;
-//import org.bouncycastle.crypto.digests.SM3Digest;
+import org.bouncycastle.crypto.digests.SM3Digest;
 /**
  * 
  * @ClassName SecureUtil

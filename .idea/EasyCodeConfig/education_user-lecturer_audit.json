@@ -109,7 +109,7 @@
   } ],
   "pkColumn" : null,
   "otherColumn" : null,
-  "savePackageName" : "mapper.user",
-  "savePath" : "./common/src/main/java/mapper/user",
-  "saveModelName" : "common"
+  "savePackageName" : "com.login.controller",
+  "savePath" : "./ed-instructor/src/main/java/com/login/controller",
+  "saveModelName" : "edinstructor"
 }

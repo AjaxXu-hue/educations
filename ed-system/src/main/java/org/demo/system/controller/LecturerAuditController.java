@@ -6,10 +6,12 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.demo.system.service.lecturer.LecturerAuditService;
 import org.demo.system.service.lecturer.LecturerService;
+import org.demo.system.service.user.UserExtService;
 import org.springframework.web.bind.annotation.*;
 import pojo.Dto;
 import pojo.user.Lecturer;
 import pojo.user.LecturerAudit;
+import pojo.user.UserExt;
 import utils.DtoUtil;
 
 import javax.annotation.Resource;
@@ -25,6 +27,9 @@ public class LecturerAuditController {
 
     @Resource
     LecturerService lecturerService;//讲师表
+
+    @Resource
+    UserExtService userExtService;//用户扩展表
 
     //查询讲师信息(审核)
     @ApiOperation(value = "查询讲师信息(审核)" , notes = "1.查询全部用户 2.根据条件查询审核信息[名称、手机号、状态、审核情况]")
@@ -95,6 +100,13 @@ public class LecturerAuditController {
 
             //删除信息(讲师审核表)
             count = lecturerAuditService.deleteById(Long.parseLong(id));
+
+            //修改用户扩展表状态
+            UserExt userExt = new UserExt();
+            userExt.setUserNo(lecturerAudit.getLecturerUserNo());
+            userExt.setUserType(10);
+            count = userExtService.updateUserExtByUserNo(userExt);
+
             if(count < 0){
                 return DtoUtil.returnFail("通过失败" , "10040");
             } else {

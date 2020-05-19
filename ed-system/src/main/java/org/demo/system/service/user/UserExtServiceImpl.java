@@ -43,6 +43,11 @@ public class UserExtServiceImpl implements UserExtService{
         return userExtMapper.updateUserExtInfo(userExt);
     }
 
+    @Override
+    public int updateUserExtByUserNo(UserExt userExt) {
+        return userExtMapper.updateUserExtByUserNo(userExt);
+    }
+
     //删除数据
     @Override
     public int deleteById(Long id) {

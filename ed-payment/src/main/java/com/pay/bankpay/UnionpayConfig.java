@@ -12,6 +12,6 @@ public class UnionpayConfig {
     /**
      * 后台异步通知地址
      */
-    public static String BACK_URL = "http://xujiawei.wezoz.com/bank/notify";
+    public static String BACK_URL = "http://xujiawei.wezoz.com/notifyurl";
 
 }

@@ -33,6 +33,9 @@ public interface UserExtService {
      */
     int updateUserExtInfo(UserExt userExt);
 
+    //根据用户编号修改信息
+    int updateUserExtByUserNo(UserExt userExt);
+
     /**
      * 通过主键删除数据
      */

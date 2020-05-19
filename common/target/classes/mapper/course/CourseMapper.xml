@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.course.CourseMapper">
+
+    <resultMap type="pojo.course.Course" id="CourseMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="introduceId" column="introduce_id" jdbcType="INTEGER"/>
+        <result property="lecturerUserNo" column="lecturer_user_no" jdbcType="INTEGER"/>
+        <result property="courseName" column="course_name" jdbcType="VARCHAR"/>
+        <result property="categoryId1" column="category_id1" jdbcType="INTEGER"/>
+        <result property="categoryId2" column="category_id2" jdbcType="INTEGER"/>
+        <result property="categoryId3" column="category_id3" jdbcType="INTEGER"/>
+        <result property="periodTotal" column="period_total" jdbcType="INTEGER"/>
+        <result property="courseLogo" column="course_logo" jdbcType="VARCHAR"/>
+        <result property="isFree" column="is_free" jdbcType="INTEGER"/>
+        <result property="courseOriginal" column="course_original" jdbcType="NUMERIC"/>
+        <result property="courseDiscount" column="course_discount" jdbcType="NUMERIC"/>
+        <result property="statusId" column="status_id" jdbcType="INTEGER"/>
+        <result property="isPutaway" column="is_putaway" jdbcType="INTEGER"/>
+        <result property="countBuy" column="count_buy" jdbcType="INTEGER"/>
+        <result property="countStudy" column="count_study" jdbcType="INTEGER"/>
+        <result property="courseSort" column="course_sort" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="CourseMap">
+        select
+          id, introduce_id, lecturer_user_no, course_name, category_id1, category_id2, category_id3, period_total, course_logo, is_free, course_original, course_discount, status_id, is_putaway, count_buy, count_study, course_sort, sort, gmt_create, gmt_modified
+        from education_course.course
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="CourseMap">
+        select
+          id, introduce_id, lecturer_user_no, course_name, category_id1, category_id2, category_id3, period_total, course_logo, is_free, course_original, course_discount, status_id, is_putaway, count_buy, count_study, course_sort, sort, gmt_create, gmt_modified
+        from education_course.course
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="introduceId != null">
+                and introduce_id = #{introduceId}
+            </if>
+            <if test="lecturerUserNo != null">
+                and lecturer_user_no = #{lecturerUserNo}
+            </if>
+            <if test="courseName != null and courseName != ''">
+                and course_name like CONCAT ('%',#{courseName},'%')
+            </if>
+            <if test="categoryId1 != null">
+                and category_id1 = #{categoryId1}
+            </if>
+            <if test="categoryId2 != null">
+                and category_id2 = #{categoryId2}
+            </if>
+            <if test="categoryId3 != null">
+                and category_id3 = #{categoryId3}
+            </if>
+            <if test="periodTotal != null">
+                and period_total = #{periodTotal}
+            </if>
+            <if test="courseLogo != null and courseLogo != ''">
+                and course_logo = #{courseLogo}
+            </if>
+            <if test="isFree != null">
+                and is_free = #{isFree}
+            </if>
+            <if test="courseOriginal != null">
+                and course_original = #{courseOriginal}
+            </if>
+            <if test="courseDiscount != null">
+                and course_discount = #{courseDiscount}
+            </if>
+            <if test="statusId != null">
+                and status_id = #{statusId}
+            </if>
+            <if test="isPutaway != null">
+                and is_putaway = #{isPutaway}
+            </if>
+            <if test="countBuy != null">
+                and count_buy = #{countBuy}
+            </if>
+            <if test="countStudy != null">
+                and count_study = #{countStudy}
+            </if>
+            <if test="courseSort != null">
+                and course_sort = #{courseSort}
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertCourseInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_course.course(introduce_id, lecturer_user_no, course_name, category_id1, category_id2, category_id3, period_total, course_logo, is_free, course_original, course_discount, status_id, is_putaway, count_buy, count_study, course_sort, sort, gmt_create, gmt_modified)
+        values (#{introduceId}, #{lecturerUserNo}, #{courseName}, #{categoryId1}, #{categoryId2}, #{categoryId3}, #{periodTotal}, #{courseLogo}, #{isFree}, #{courseOriginal}, #{courseDiscount}, #{statusId}, #{isPutaway}, #{countBuy}, #{countStudy}, #{courseSort}, #{sort}, #{gmtCreate}, #{gmtModified})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateCourseInfo">
+        update education_course.course
+        <set>
+            <if test="introduceId != null">
+                introduce_id = #{introduceId},
+            </if>
+            <if test="lecturerUserNo != null">
+                lecturer_user_no = #{lecturerUserNo},
+            </if>
+            <if test="courseName != null and courseName != ''">
+                course_name = #{courseName},
+            </if>
+            <if test="categoryId1 != null">
+                category_id1 = #{categoryId1},
+            </if>
+            <if test="categoryId2 != null">
+                category_id2 = #{categoryId2},
+            </if>
+            <if test="categoryId3 != null">
+                category_id3 = #{categoryId3},
+            </if>
+            <if test="periodTotal != null">
+                period_total = #{periodTotal},
+            </if>
+            <if test="courseLogo != null and courseLogo != ''">
+                course_logo = #{courseLogo},
+            </if>
+            <if test="isFree != null">
+                is_free = #{isFree},
+            </if>
+            <if test="courseOriginal != null">
+                course_original = #{courseOriginal},
+            </if>
+            <if test="courseDiscount != null">
+                course_discount = #{courseDiscount},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId},
+            </if>
+            <if test="isPutaway != null">
+                is_putaway = #{isPutaway},
+            </if>
+            <if test="countBuy != null">
+                count_buy = #{countBuy},
+            </if>
+            <if test="countStudy != null">
+                count_study = #{countStudy},
+            </if>
+            <if test="courseSort != null">
+                course_sort = #{courseSort},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_course.course where id = #{id}
+    </delete>
+
+</mapper>

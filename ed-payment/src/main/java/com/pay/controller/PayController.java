@@ -32,6 +32,15 @@ public class PayController {
     @Resource
     private AlipayConfig alipayConfig;
 
+    //页面跳转
+    @GetMapping("/bank")
+    @ResponseBody
+    public ModelAndView bankView(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("union");
+        return mv;
+    }
+
     //订单确认
     @GetMapping(value = "/prepay/{orderNo}")
     public ModelAndView prePay(@PathVariable String orderNo, ModelMap model) {

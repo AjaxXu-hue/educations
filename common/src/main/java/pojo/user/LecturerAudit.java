@@ -192,4 +192,24 @@ public class LecturerAudit {
         this.gmtModified = gmtModified;
     }
 
+    @Override
+    public String toString() {
+        return "LecturerAudit{" +
+                "id=" + id +
+                ", lecturerName='" + lecturerName + '\'' +
+                ", lecturerUserNo=" + lecturerUserNo +
+                ", lecturerMobile='" + lecturerMobile + '\'' +
+                ", position='" + position + '\'' +
+                ", lecturerEmail='" + lecturerEmail + '\'' +
+                ", introduce='" + introduce + '\'' +
+                ", headImgUrl='" + headImgUrl + '\'' +
+                ", auditOpinion='" + auditOpinion + '\'' +
+                ", sort=" + sort +
+                ", lecturerProportion=" + lecturerProportion +
+                ", auditStatus=" + auditStatus +
+                ", statusId=" + statusId +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                '}';
+    }
 }

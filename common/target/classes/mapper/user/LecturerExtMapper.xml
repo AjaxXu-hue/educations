@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.user.LecturerExtMapper">
+
+    <resultMap type="pojo.user.LecturerExt" id="LecturerExtMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="lecturerUserNo" column="lecturer_user_no" jdbcType="INTEGER"/>
+        <result property="totalIncome" column="total_income" jdbcType="NUMERIC"/>
+        <result property="historyMoney" column="history_money" jdbcType="NUMERIC"/>
+        <result property="enableBalances" column="enable_balances" jdbcType="NUMERIC"/>
+        <result property="freezeBalances" column="freeze_balances" jdbcType="NUMERIC"/>
+        <result property="bankCardNo" column="bank_card_no" jdbcType="VARCHAR"/>
+        <result property="bankName" column="bank_name" jdbcType="VARCHAR"/>
+        <result property="bankBranchName" column="bank_branch_name" jdbcType="VARCHAR"/>
+        <result property="bankUserName" column="bank_user_name" jdbcType="VARCHAR"/>
+        <result property="bankIdCardNo" column="bank_id_card_no" jdbcType="VARCHAR"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="sign" column="sign" jdbcType="VARCHAR"/>
+        <result property="statusId" column="status_id" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="LecturerExtMap">
+        select
+          id, lecturer_user_no, total_income, history_money, enable_balances, freeze_balances, bank_card_no, bank_name, bank_branch_name, bank_user_name, bank_id_card_no, sort, sign, status_id, gmt_create, gmt_modified
+        from education_user.lecturer_ext
+        where lecturer_user_no = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="findAllByLimit" resultMap="LecturerExtMap">
+        select
+          id, lecturer_user_no, total_income, history_money, enable_balances, freeze_balances, bank_card_no, bank_name, bank_branch_name, bank_user_name, bank_id_card_no, sort, sign, status_id, gmt_create, gmt_modified
+        from education_user.lecturer_ext
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="LecturerExtMap">
+        select
+          id, lecturer_user_no, total_income, history_money, enable_balances, freeze_balances, bank_card_no, bank_name, bank_branch_name, bank_user_name, bank_id_card_no, sort, sign, status_id, gmt_create, gmt_modified
+        from education_user.lecturer_ext
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="lecturerUserNo != null">
+                and lecturer_user_no = #{lecturerUserNo}
+            </if>
+            <if test="totalIncome != null">
+                and total_income = #{totalIncome}
+            </if>
+            <if test="historyMoney != null">
+                and history_money = #{historyMoney}
+            </if>
+            <if test="enableBalances != null">
+                and enable_balances = #{enableBalances}
+            </if>
+            <if test="freezeBalances != null">
+                and freeze_balances = #{freezeBalances}
+            </if>
+            <if test="bankCardNo != null and bankCardNo != ''">
+                and bank_card_no = #{bankCardNo}
+            </if>
+            <if test="bankName != null and bankName != ''">
+                and bank_name = #{bankName}
+            </if>
+            <if test="bankBranchName != null and bankBranchName != ''">
+                and bank_branch_name = #{bankBranchName}
+            </if>
+            <if test="bankUserName != null and bankUserName != ''">
+                and bank_user_name = #{bankUserName}
+            </if>
+            <if test="bankIdCardNo != null and bankIdCardNo != ''">
+                and bank_id_card_no = #{bankIdCardNo}
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            <if test="sign != null and sign != ''">
+                and sign = #{sign}
+            </if>
+            <if test="statusId != null">
+                and status_id = #{statusId}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertLectureBank" keyProperty="id" useGeneratedKeys="true">
+        insert into education_user.lecturer_ext(lecturer_user_no, total_income, history_money, enable_balances, freeze_balances, bank_card_no, bank_name, bank_branch_name, bank_user_name, bank_id_card_no, sort, sign, status_id, gmt_create, gmt_modified)
+        values (#{lecturerUserNo}, #{totalIncome}, #{historyMoney}, #{enableBalances}, #{freezeBalances}, #{bankCardNo}, #{bankName}, #{bankBranchName}, #{bankUserName}, #{bankIdCardNo}, #{sort}, #{sign}, #{statusId}, #{gmtCreate}, #{gmtModified})
+    </insert>
+
+    <!--通过讲师用户编码修改数据-->
+    <update id="updateLectureBank">
+        update education_user.lecturer_ext
+        <set>
+            <if test="totalIncome != null">
+                total_income = total_income + #{totalIncome},
+            </if>
+            <if test="historyMoney != null">
+                history_money =  history_money + #{historyMoney},
+            </if>
+            <if test="enableBalances != null">
+                enable_balances = enable_balances + #{enableBalances},
+            </if>
+            <if test="freezeBalances != null">
+                freeze_balances = #{freezeBalances},
+            </if>
+            <if test="bankCardNo != null and bankCardNo != ''">
+                bank_card_no = #{bankCardNo},
+            </if>
+            <if test="bankName != null and bankName != ''">
+                bank_name = #{bankName},
+            </if>
+            <if test="bankBranchName != null and bankBranchName != ''">
+                bank_branch_name = #{bankBranchName},
+            </if>
+            <if test="bankUserName != null and bankUserName != ''">
+                bank_user_name = #{bankUserName},
+            </if>
+            <if test="bankIdCardNo != null and bankIdCardNo != ''">
+                bank_id_card_no = #{bankIdCardNo},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="sign != null and sign != ''">
+                sign = #{sign},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+        </set>
+        where lecturer_user_no = #{lecturerUserNo}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_user.lecturer_ext where id = #{id}
+    </delete>
+
+</mapper>

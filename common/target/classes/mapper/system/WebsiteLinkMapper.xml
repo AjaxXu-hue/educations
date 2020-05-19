@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.system.WebsiteLinkMapper">
+
+    <resultMap type="pojo.system.WebsiteLink" id="WebsiteLinkMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="linkName" column="link_name" jdbcType="VARCHAR"/>
+        <result property="linkUrl" column="link_url" jdbcType="VARCHAR"/>
+        <result property="linkTarget" column="link_target" jdbcType="VARCHAR"/>
+        <result property="statusId" column="status_id" jdbcType="INTEGER"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="WebsiteLinkMap">
+        select
+          id, link_name, link_url, link_target, status_id, sort, gmt_create, gmt_modified
+        from education_system.website_link
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="findAllByLimit" resultMap="WebsiteLinkMap">
+        select
+          id, link_name, link_url, link_target, status_id, sort, gmt_create, gmt_modified
+        from education_system.website_link
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="WebsiteLinkMap">
+        select
+          id, link_name, link_url, link_target, status_id, sort, gmt_create, gmt_modified
+        from education_system.website_link
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="linkName != null and linkName != ''">
+                and link_name like CONCAT ('%',#{linkName},'%')
+            </if>
+            <if test="linkUrl != null and linkUrl != ''">
+                and link_url = #{linkUrl}
+            </if>
+            <if test="linkTarget != null and linkTarget != ''">
+                and link_target = #{linkTarget}
+            </if>
+            <if test="statusId != null">
+                and status_id = #{statusId}
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+            <if test="gmtModified != null">
+                and gmt_modified = #{gmtModified}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertLinkInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_system.website_link(link_name, link_url, link_target, status_id, gmt_create, gmt_modified)
+        values (#{linkName}, #{linkUrl}, #{linkTarget}, #{statusId}, #{gmtCreate}, #{gmtModified})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateLinkInfo">
+        update education_system.website_link
+        <set>
+            <if test="linkName != null and linkName != ''">
+                link_name = #{linkName},
+            </if>
+            <if test="linkUrl != null and linkUrl != ''">
+                link_url = #{linkUrl},
+            </if>
+            <if test="linkTarget != null and linkTarget != ''">
+                link_target = #{linkTarget},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_system.website_link where id = #{id}
+    </delete>
+
+</mapper>
