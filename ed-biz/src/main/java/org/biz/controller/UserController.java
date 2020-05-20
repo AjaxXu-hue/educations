@@ -1,25 +1,33 @@
 package org.biz.controller;
 
+import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import mapper.user.DictinfoUserMapper;
+import org.biz.service.DictinfoUserService;
+import org.biz.service.course.CourseCollectionService;
 import org.biz.service.course.CourseService;
 import org.biz.service.orderInfo.OrderInfoService;
 import org.biz.service.userInfo.UserExtService;
+import org.biz.utils.RedisAPI;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pojo.Dto;
 import pojo.course.Course;
+import pojo.course.CourseCollection;
 import pojo.course.OrderInfo;
 import pojo.user.Dictinfo;
+import pojo.user.User;
 import pojo.user.UserExt;
 import utils.DtoUtil;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -33,10 +41,16 @@ public class UserController {
     OrderInfoService orderInfoService;//订单表
 
     @Resource
-    CourseService courseService;
+    CourseService courseService;//课程信息
 
     @Resource
-    DictinfoUserMapper dictinfoMapper;//字典信息表
+    DictinfoUserService dictinfoUserService;//字典信息表
+
+    @Resource
+    CourseCollectionService courseCollectionService;//收藏表
+
+    @Resource
+    RedisAPI redisAPI;//redis工具类
 
     @ApiOperation(value = "根据用户编号查询信息", notes = "根据用户编号查询信息")
     @ApiImplicitParam(paramType = "query" , name = "userNum" , value = "用户编号")
@@ -46,7 +60,7 @@ public class UserController {
         UserExt userInfo = userExtService.findById(Long.parseLong(userNum));
 
         //查询性别
-        Dictinfo dicInfo = dictinfoMapper.findIdByInfo(userInfo.getSex());
+        Dictinfo dicInfo = dictinfoUserService.findIdByInfo(userInfo.getSex());
 
         //性别信息
         userInfo.setSexInfo(dicInfo.getInfo());
@@ -110,6 +124,40 @@ public class UserController {
         return DtoUtil.returnDataSuccess(coursesInfo);
     }
 
+
+    //课程收藏
+    @ApiOperation(value = "课程收藏", notes = "课程收藏")
+    @ApiImplicitParams({@ApiImplicitParam(paramType = "query" , name = "courseNum" , value = "课程编号"),
+            @ApiImplicitParam(paramType = "query" , name = "courseName" , value = "课程名称"),
+            @ApiImplicitParam(paramType="header",required=true,name="token",value="用户认证Token")})
+    @GetMapping("/userInfo/insertInfo")
+    public Dto userInfo(@RequestParam(value = "courseNum" , required = true) String courseNum ,
+                        @RequestParam(value = "courseName" , required = true) String courseName ,
+                        HttpServletRequest request) {
+
+        // 获取当前登录的用户信息
+        String tokenString = request.getHeader("token");
+        String userJson = String.valueOf(redisAPI.get(tokenString));
+        User userInfo = JSON.parseObject(userJson, User.class);
+        if (null == userInfo) {
+            return DtoUtil.returnFail("请先登录用户", "00000");
+        }
+
+        //新增收藏信息
+        CourseCollection courseCollection = new CourseCollection();
+        courseCollection.setCourseid(Long.parseLong(courseNum));
+        courseCollection.setCoursename(courseName);
+        courseCollection.setUserid(userInfo.getId());
+        courseCollection.setCreatetime(new Date());
+        courseCollection.setUpdatetime(new Date());
+        int count = courseCollectionService.insert(courseCollection);
+
+        if(count < 0){
+            return DtoUtil.returnSuccess("课程收藏失败");
+        }
+
+        return DtoUtil.returnSuccess("课程收藏成功!!");
+    }
 
 
 }

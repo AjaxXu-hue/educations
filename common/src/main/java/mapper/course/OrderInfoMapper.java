@@ -25,4 +25,7 @@ public interface OrderInfoMapper {
     //通过主键删除数据
     int deleteById(Long id);
 
+    //刷新订单状态
+    Integer flushSuccessOrderStatus();
+
 }

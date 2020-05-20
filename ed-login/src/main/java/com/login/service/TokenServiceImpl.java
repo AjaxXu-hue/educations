@@ -1,13 +1,16 @@
 package com.login.service;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.login.utils.RedisAPI;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.springframework.stereotype.Service;
 import pojo.user.User;
+import springfox.documentation.spring.web.json.Json;
 import utils.*;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class TokenServiceImpl implements TokenService{
@@ -41,7 +44,7 @@ public class TokenServiceImpl implements TokenService{
     public void save(String token , User user) {
         //分移动端和pc端
         if(token.startsWith("token:PC-")){
-            redisAPI.set(token , user, 120*60);
+            redisAPI.set(token , JSONObject.toJSONString(user), 120*60);
         } else {
             redisAPI.set(token , JSON.toJSONString(user) , 0);
         }

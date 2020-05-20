@@ -71,6 +71,11 @@ public class OrderInfo {
     * 订单状态(关联字典表)
     */
     private Integer orderStatus;
+
+    /**
+     * 订单状态(关联字典表)
+     */
+    private Integer orderType;
     /**
     * 客户备注
     */
@@ -219,6 +224,14 @@ public class OrderInfo {
 
     public void setRemarkCus(String remarkCus) {
         this.remarkCus = remarkCus;
+    }
+
+    public Integer getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(Integer orderType) {
+        this.orderType = orderType;
     }
 
     public String getRemark() {

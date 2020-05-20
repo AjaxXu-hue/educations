@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.course.CourseMiaoshaMapper">
+
+    <resultMap type="pojo.course.CourseMiaosha" id="CourseMiaoshaMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="courseId" column="course_id" jdbcType="INTEGER"/>
+        <result property="miaoshaPrice" column="miaosha_price" jdbcType="NUMERIC"/>
+        <result property="stockCount" column="stock_count" jdbcType="INTEGER"/>
+        <result property="startDate" column="start_date" jdbcType="TIMESTAMP"/>
+        <result property="endDate" column="end_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="CourseMiaoshaMap">
+        select
+          id, course_id, miaosha_price, stock_count, start_date, end_date
+        from education_course.course_miaosha
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="CourseMiaoshaMap">
+        select
+          id, course_id, miaosha_price, stock_count, start_date, end_date
+        from education_course.course_miaosha
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="courseId != null">
+                and course_id = #{courseId}
+            </if>
+            <if test="miaoshaPrice != null">
+                and miaosha_price = #{miaoshaPrice}
+            </if>
+            <if test="stockCount != null">
+                and stock_count = #{stockCount}
+            </if>
+            <if test="startDate != null">
+                and start_date = #{startDate}
+            </if>
+            <if test="endDate != null">
+                and end_date = #{endDate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertMiaoShaInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_course.course_miaosha(course_id, miaosha_price, stock_count, start_date, end_date)
+        values (#{courseId}, #{miaoshaPrice}, #{stockCount}, #{startDate}, #{endDate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateMiaoShaInfo">
+        update education_course.course_miaosha
+        <set>
+            <if test="courseId != null">
+                course_id = #{courseId},
+            </if>
+            <if test="miaoshaPrice != null">
+                miaosha_price = #{miaoshaPrice},
+            </if>
+            <if test="stockCount != null">
+                stock_count = #{stockCount},
+            </if>
+            <if test="startDate != null">
+                start_date = #{startDate},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_course.course_miaosha where id = #{id}
+    </delete>
+
+    <!--修改库存信息-->
+    <update id="updateCourseStock">
+        update education_course.course_miaosha
+        <set>
+            <choose>
+                <when test="stoType != null">
+                    stock_count = stock_count + 1
+                </when>
+                <otherwise>
+                    stock_count = stock_count - 1
+                </otherwise>
+            </choose>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

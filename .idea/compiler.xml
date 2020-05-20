@@ -10,10 +10,10 @@
         <module name="edlogin" />
         <module name="edsystem" />
         <module name="edorder" />
-        <module name="edinstructor" />
-        <module name="common" />
-        <module name="edsearch" />
         <module name="edpayment" />
+        <module name="edinstructor" />
+        <module name="edsearch" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
   </component>
