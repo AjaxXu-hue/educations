@@ -13,7 +13,7 @@ import java.util.List;
 //系统管理员  用户基本信息
 public class SysUser implements UserDetails {
     private Integer id;
-    private Integer userNo;//用户编号
+    private Long userNo;//用户编号
     private String password;//密码
     private String mobile;//手机号码
     private String real_name;//真实姓名
@@ -95,11 +95,11 @@ public class SysUser implements UserDetails {
         this.id = id;
     }
 
-    public Integer getUserNo() {
+    public Long getUserNo() {
         return userNo;
     }
 
-    public void setUserNo(Integer userNo) {
+    public void setUserNo(Long userNo) {
         this.userNo = userNo;
     }
 
@@ -170,4 +170,6 @@ public class SysUser implements UserDetails {
     public void setInfo(String info) {
         this.info = info;
     }
+
+
 }

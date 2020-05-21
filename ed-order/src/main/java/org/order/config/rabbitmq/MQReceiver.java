@@ -41,11 +41,11 @@ public class MQReceiver {
             return;//库存不足
         }
 
-//        //判断是否已经秒杀到了(防止重复下单)传入用户编号，和秒杀商品Id
-//        OrderInfo orderInfo = orderInfoService.insertRedisOrderInfo(userInfo.getUserNo() , miaoshaId);
-//        if(orderInfo != null){
-//            return;
-//        }
+        //判断是否已经秒杀到了(防止重复下单)传入用户编号，和秒杀商品Id
+        OrderInfo orderInfo = orderInfoService.insertRedisOrderInfo(userInfo.getUserNo() , miaoshaId);
+        if(orderInfo != null){
+            return;
+        }
 
         //修改库存 生成订单
         int orderInfoCount = courseMiaoshaService.miaosha(userInfo , String.valueOf(miaoshaId));

@@ -28,4 +28,7 @@ public interface OrderInfoMapper {
     //刷新订单状态
     Integer flushSuccessOrderStatus();
 
+    //查询需要刷新订单
+    List<OrderInfo> findAllOrderStatus();
+
 }

@@ -108,7 +108,7 @@ public class UserLoginController {
 
     //邮箱注册/手机注册（发送注册码）
     @ApiOperation(value = "邮箱注册/手机注册（发送注册码）", notes = "发送注册码")
-    @ApiImplicitParam(paramType = "query", name = "mobileOrEmail", value = "电话号码或者邮箱")
+    @ApiImplicitParam(paramType = "query", name = "mobileOrEmail", value = "电话号码/邮箱")
     @GetMapping("/validateCode")
     public Dto validateCode(@RequestParam(value = "mobileOrEmail") String mobileOrEmail) {
         //验证邮箱
@@ -133,7 +133,7 @@ public class UserLoginController {
     //用户注册  邮箱注册/手机注册
     @ApiOperation(value = "用户注册", notes = "用户注册")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType = "query", name = "mobileOrEmail", value = "电话号码或者邮箱"),
+            @ApiImplicitParam(paramType = "query", name = "mobileOrEmail", value = "电话号码/邮箱"),
             @ApiImplicitParam(paramType = "query", name = "password", value = "密码"),
             @ApiImplicitParam(paramType = "query", name = "code", value = "验证码")})
     @GetMapping("/regisUser")
@@ -150,9 +150,9 @@ public class UserLoginController {
         Boolean flag = testEmail(mobileOrEmail);
         if(!flag){
             //验证手机号
-            Boolean flag2 = testPhone(mobileOrEmail);
-            if(!flag2){
-                return DtoUtil.returnFail("格式验证失败" , "10000");
+            flag = testPhone(mobileOrEmail);
+            if(!flag){
+                return DtoUtil.returnFail("输入的手机号码或者邮箱格式不正确!!" , "10000");
             } else {
                 user.setMobile(mobileOrEmail);
             }
@@ -177,7 +177,7 @@ public class UserLoginController {
     }
 
     //修改密码
-    @ApiOperation(value = "修改密码", notes = "修改密码")
+    @ApiOperation(value = "修改密码", notes = "根据电话号码修改密码")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "query", name = "mobile", value = "电话号码"),
             @ApiImplicitParam(paramType = "query", name = "password", value = "密码"),
@@ -185,14 +185,14 @@ public class UserLoginController {
             @ApiImplicitParam(paramType = "query", name = "userCode", value = "用户编号")})
     @GetMapping("/updateUserPwd")
     public Dto updateUserPwd(@RequestParam(value = "mobile") String mobile,
-                            @RequestParam(value = "password") String password,
+                             @RequestParam(value = "password") String password,
                              @RequestParam(value = "code") String code,
                              @RequestParam(value = "userCode") String userCode) {
         //验证码验证
         if(!userService.testCode(mobile , code)){
             return DtoUtil.returnSuccess("验证码输入错误!!");
         }
-        //验证邮箱或密码
+
         User user = new User();
         //验证手机号
         Boolean flag2 = testPhone(mobile);

@@ -117,4 +117,19 @@ public class InsertCourseAudit {
     public void setIntroduce(String introduce) {
         this.introduce = introduce;
     }
+
+    @Override
+    public String toString() {
+        return "InsertCourseAudit{" +
+                "lecturerUserNo=" + lecturerUserNo +
+                ", courseName='" + courseName + '\'' +
+                ", categoryId1=" + categoryId1 +
+                ", categoryId2=" + categoryId2 +
+                ", categoryId3=" + categoryId3 +
+                ", courseLogo='" + courseLogo + '\'' +
+                ", courseOriginal=" + courseOriginal +
+                ", isFree=" + isFree +
+                ", introduce='" + introduce + '\'' +
+                '}';
+    }
 }

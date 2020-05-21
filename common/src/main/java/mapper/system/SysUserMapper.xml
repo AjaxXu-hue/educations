@@ -4,8 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.system.SysUserMapper">
 
+    <resultMap type="pojo.system.SysUser" id="SysUserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userNo" column="user_no" jdbcType="INTEGER"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+        <result property="real_name" column="real_name" jdbcType="VARCHAR"/>
+        <result property="dictinfoID" column="dictinfoID" jdbcType="VARCHAR"/>
+        <result property="gmt_create" column="gmt_create" jdbcType="VARCHAR"/>
+        <result property="gmt_modified" column="gmt_modified" jdbcType="VARCHAR"/>
+    </resultMap>
+
     <!--根据用户名查询信息-->
-    <select id="findSysUserByName" resultType="pojo.system.SysUser">
+    <select id="findSysUserByName" resultMap="SysUserMap">
         SELECT u.* , info.`info` , type.`typeNamezh`
         FROM `sys_user` u, `dictinfo` info , `dicttype` `type`
         WHERE `type`.`typeCode` = info.`typeCode` AND

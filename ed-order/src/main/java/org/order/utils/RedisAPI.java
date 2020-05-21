@@ -65,11 +65,18 @@ public class RedisAPI {
     public void del(String... key){
         if(key != null && key.length > 0){
             if(key.length == 1){
-                redisTemplate.delete(key[0]);
+                stringRedisTemplate.delete(key[0]);
             } else {
-                redisTemplate.delete(CollectionUtils.arrayToList(key));
+                stringRedisTemplate.delete(CollectionUtils.arrayToList(key));
             }
         }
+    }
+
+    /**
+     * 根据KEY获取保存时间
+     */
+    public Long time(String key){
+        return stringRedisTemplate.opsForValue().getOperations().getExpire(key);
     }
 
     /**
@@ -78,7 +85,7 @@ public class RedisAPI {
      * @return
      */
     public Boolean decr(String key) {
-        Long time=stringRedisTemplate.opsForValue().getOperations().getExpire(key);
+        Long time=time(key);
         int i=Integer.parseInt(stringRedisTemplate.opsForValue().get(key))-1;
         if(i>0){
             this.set(key,String.valueOf(i),time);
@@ -86,5 +93,17 @@ public class RedisAPI {
         }else{
             return false;
         }
+    }
+
+    /**
+     * 递增
+     * @param key 键
+     * @return
+     */
+    public Boolean insert(String key) {
+        Long time=time(key);
+        int i=Integer.parseInt(stringRedisTemplate.opsForValue().get(key))+1;
+        this.set(key,String.valueOf(i),time);
+        return true;
     }
 }

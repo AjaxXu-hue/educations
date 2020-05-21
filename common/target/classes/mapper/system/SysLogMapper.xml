@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.system.SysLogMapper">
+
+    <resultMap type="pojo.system.SysLog" id="SysLogMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userNo" column="user_no" jdbcType="INTEGER"/>
+        <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+        <result property="ip" column="ip" jdbcType="VARCHAR"/>
+        <result property="operation" column="operation" jdbcType="VARCHAR"/>
+        <result property="method" column="method" jdbcType="VARCHAR"/>
+        <result property="path" column="path" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="findById" resultMap="SysLogMap">
+        select
+          id, user_no, real_name, ip, operation, method, path, content, gmt_create
+        from education_system.sys_log
+        where id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="findAll" resultMap="SysLogMap">
+        select
+          id, user_no, real_name, ip, operation, method, path, content, gmt_create
+        from education_system.sys_log
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userNo != null">
+                and user_no = #{userNo}
+            </if>
+            <if test="realName != null and realName != ''">
+                and real_name = #{realName}
+            </if>
+            <if test="ip != null and ip != ''">
+                and ip = #{ip}
+            </if>
+            <if test="operation != null and operation != ''">
+                and operation = #{operation}
+            </if>
+            <if test="method != null and method != ''">
+                and method = #{method}
+            </if>
+            <if test="path != null and path != ''">
+                and path = #{path}
+            </if>
+            <if test="content != null and content != ''">
+                and content = #{content}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insertLogInfo" keyProperty="id" useGeneratedKeys="true">
+        insert into education_system.sys_log(user_no, real_name, ip, operation, method, path, content, gmt_create)
+        values (#{userNo}, #{realName}, #{ip}, #{operation}, #{method}, #{path}, #{content}, #{gmtCreate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="updateLongInfo">
+        update education_system.sys_log
+        <set>
+            <if test="userNo != null">
+                user_no = #{userNo},
+            </if>
+            <if test="realName != null and realName != ''">
+                real_name = #{realName},
+            </if>
+            <if test="ip != null and ip != ''">
+                ip = #{ip},
+            </if>
+            <if test="operation != null and operation != ''">
+                operation = #{operation},
+            </if>
+            <if test="method != null and method != ''">
+                method = #{method},
+            </if>
+            <if test="path != null and path != ''">
+                path = #{path},
+            </if>
+            <if test="content != null and content != ''">
+                content = #{content},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from education_system.sys_log where id = #{id}
+    </delete>
+
+</mapper>

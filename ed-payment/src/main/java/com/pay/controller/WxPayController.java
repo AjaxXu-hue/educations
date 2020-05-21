@@ -1,6 +1,7 @@
 package com.pay.controller;
 
 import com.pay.config.wx.WXPayConstants;
+import com.pay.service.LecturerExtService;
 import com.pay.service.OrderInfoService;
 import com.pay.config.wx.WXPayRequest;
 import com.pay.config.wx.WXPayUtil;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pojo.Dto;
 import pojo.course.OrderInfo;
+import pojo.user.LecturerExt;
 import utils.DtoUtil;
 
 import javax.annotation.Resource;
@@ -33,6 +35,9 @@ public class WxPayController {
     OrderInfoService orderInfoService;
 
     private String trade_no;
+
+    @Resource
+    LecturerExtService lecturerExtService;
 
     //进入微信支付页面
     @GetMapping("/index")
@@ -130,6 +135,12 @@ public class WxPayController {
                     order.setPayNo(trade_no);
                     order.setId(orderList.get(0).getId());
                     orderInfoService.updateOrderInfo(order);
+
+                    //修改讲师金额
+                    LecturerExt lecturerExt = new LecturerExt();
+                    lecturerExt.setLecturerUserNo(orderList.get(0).getLecturerUserNo());
+                    lecturerExt.setEnableBalances(orderList.get(0).getLecturerProfit());
+                    lecturerExtService.updateLectureBank(lecturerExt);
                 }
             }
 

@@ -81,7 +81,7 @@ public class UserController {
     @GetMapping("/userInfo/orderInfo")
     public Dto orderInfo(@RequestParam(value = "userNum") String userNum ,
                          @RequestParam(value = "orderStatic") String orderStatic){
-        //添加数据
+
         OrderInfo orderInfo = new OrderInfo();
         orderInfo.setUserNo(Long.parseLong(userNum));
         orderInfo.setOrderStatus(Integer.parseInt(orderStatic));
@@ -100,7 +100,7 @@ public class UserController {
     @ApiImplicitParam(paramType = "query" , name = "userNum" , value = "用户编号" , required = true)
     @GetMapping("/userInfo/orderCourseInfo")
     public Dto orderCourseInfo(@RequestParam(value = "userNum") String userNum){
-        //添加数据
+
         OrderInfo orderInfo = new OrderInfo();
         orderInfo.setUserNo(Long.parseLong(userNum));
         orderInfo.setOrderStatus(17);
@@ -124,7 +124,6 @@ public class UserController {
         return DtoUtil.returnDataSuccess(coursesInfo);
     }
 
-
     //课程收藏
     @ApiOperation(value = "课程收藏", notes = "课程收藏")
     @ApiImplicitParams({@ApiImplicitParam(paramType = "query" , name = "courseNum" , value = "课程编号"),
@@ -147,7 +146,7 @@ public class UserController {
         CourseCollection courseCollection = new CourseCollection();
         courseCollection.setCourseid(Long.parseLong(courseNum));
         courseCollection.setCoursename(courseName);
-        courseCollection.setUserid(userInfo.getId());
+        courseCollection.setUserid(userInfo.getUserNo());
         courseCollection.setCreatetime(new Date());
         courseCollection.setUpdatetime(new Date());
         int count = courseCollectionService.insert(courseCollection);

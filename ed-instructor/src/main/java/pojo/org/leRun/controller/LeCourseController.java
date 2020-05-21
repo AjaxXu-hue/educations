@@ -34,7 +34,7 @@ public class LeCourseController {
     CourseIntroduceAuditService courseIntroduceAuditService;////课程介绍信息-审核
 
     //查看讲师课程信息
-    @ApiOperation(value = "查询相关教师得课程信息", notes = "1.审核通过得课程信息</br>2.审核未通过得课程信息")
+    @ApiOperation(value = "查询相关教师的课程信息", notes = "1.审核通过的课程信息</br>2.审核未通过的课程信息")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "query", name = "leUserNo", value = "讲师编号" , required = true),
             @ApiImplicitParam(paramType = "query", name = "coStatus", value = "审核编号 9=待审核  11=审核失败")})
@@ -49,7 +49,7 @@ public class LeCourseController {
             List<CourseAudit> findCourseAudit = courseAuditService.findAll(courseAudit);
             return DtoUtil.returnDataSuccess(findCourseAudit);
         }else {
-            //查询该教师得课程信息
+            //查询该教师的课程信息
             Course course = new Course();
             course.setLecturerUserNo(Long.parseLong(leUserNo));
             List<Course> findByLeUserNo = courseService.findAll(course);
@@ -61,7 +61,6 @@ public class LeCourseController {
     @ApiOperation(value = "新增讲师课程信息", notes = "1.新增讲师课程信息(课程介绍信息)")
     @PostMapping("/course/insertLeCou")
     public Dto courseInfo(@RequestBody InsertCourseAudit insertCourseAudit){
-
         //添加课程简介信息
         CourseIntroduceAudit courseIntroduceAudit = new CourseIntroduceAudit();
         courseIntroduceAudit.setGmtModified(new Date());

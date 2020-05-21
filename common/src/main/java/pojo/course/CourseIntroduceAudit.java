@@ -57,4 +57,13 @@ public class CourseIntroduceAudit{
         this.gmtModified = gmtModified;
     }
 
+    @Override
+    public String toString() {
+        return "CourseIntroduceAudit{" +
+                "id=" + id +
+                ", introduce='" + introduce + '\'' +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                '}';
+    }
 }

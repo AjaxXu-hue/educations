@@ -7,6 +7,7 @@ import com.alipay.api.domain.AlipayTradeWapPayModel;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradeWapPayRequest;
 import com.pay.config.AlipayConfig;
+import com.pay.service.LecturerExtService;
 import com.pay.service.OrderInfoService;
 import io.swagger.annotations.ApiParam;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pojo.course.OrderInfo;
+import pojo.user.Lecturer;
+import pojo.user.LecturerExt;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +35,9 @@ public class PayController {
     @Resource
     private AlipayConfig alipayConfig;
 
+    @Resource
+    LecturerExtService lecturerExtService;
+
     //页面跳转
     @GetMapping("/bank")
     @ResponseBody
@@ -49,10 +55,9 @@ public class PayController {
             OrderInfo order = new OrderInfo();
             order.setOrderNo(Long.parseLong(orderNo));
             List<OrderInfo> orderList = orderInfoService.findAll(order);
-            System.out.println(orderList);
             if(orderList.size()>0){
                 mv.addObject("orderNo",orderNo);
-                mv.addObject("orderPrice",orderList.get(0).getPricePaid());
+                mv.addObject("orderPrice",orderList.get(0).getPricePayable());
                 mv.addObject("curricName",orderList.get(0).getCourseName());
                 mv.setViewName("pay");
             }else{
@@ -167,6 +172,12 @@ public class PayController {
                     order.setPayNo(trade_no);
                     order.setId(orderList.get(0).getId());
                     orderInfoService.updateOrderInfo(order);
+
+                    //修改讲师金额
+                    LecturerExt lecturerExt = new LecturerExt();
+                    lecturerExt.setLecturerUserNo(orderList.get(0).getLecturerUserNo());
+                    lecturerExt.setEnableBalances(orderList.get(0).getLecturerProfit());
+                    lecturerExtService.updateLectureBank(lecturerExt);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -188,6 +199,12 @@ public class PayController {
                     order.setPayNo(trade_no);
                     order.setId(orderList.get(0).getId());
                     orderInfoService.updateOrderInfo(order);
+
+                    //修改讲师金额
+                    LecturerExt lecturerExt = new LecturerExt();
+                    lecturerExt.setLecturerUserNo(orderList.get(0).getLecturerUserNo());
+                    lecturerExt.setEnableBalances(orderList.get(0).getLecturerProfit());
+                    lecturerExtService.updateLectureBank(lecturerExt);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -44,7 +44,6 @@ public class LeAuditController {
         //讲师编号生成
         lecturerAudit.setLecturerUserNo(insertLeAudit.getLecturerUserNo());
 
-
         int count = lecturerAuditService.insertAuditInfo(lecturerAudit);
         if(count > 0){
             return DtoUtil.returnSuccess("新增成功!!");

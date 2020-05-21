@@ -23,7 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@Api(value = "LeExtController" , tags = "讲师详细信息接口")
+@Api(value = "LeExtController" , tags = "讲师详细信息接口(收益)")
 public class LeExtController {
 
     @Resource

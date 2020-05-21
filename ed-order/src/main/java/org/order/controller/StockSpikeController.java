@@ -78,9 +78,15 @@ public class StockSpikeController implements InitializingBean {
             return DtoUtil.returnFail("请先登录用户", "00000");
         }
 
-        boolean over = localOverMap.get(msId);
+        boolean over = localOverMap.get(Long.parseLong(msId));
         if(over){
             return DtoUtil.returnSuccess("库存不足");
+        }
+
+        //判断是否已经秒杀到了(防止重复下单)传入用户编号，和秒杀商品Id
+        OrderInfo orderInfo = orderInfoService.insertRedisOrderInfo(userInfo.getUserNo() , Long.parseLong(msId));
+        if(orderInfo != null){
+            return DtoUtil.returnSuccess("已经购买成功");
         }
 
         //预减库存
@@ -89,12 +95,6 @@ public class StockSpikeController implements InitializingBean {
             localOverMap.put(Long.parseLong(msId) , true);
             return DtoUtil.returnSuccess("库存不足");
         }
-
-//        //判断是否已经秒杀到了(防止重复下单)传入用户编号，和秒杀商品Id
-//        OrderInfo orderInfo = orderInfoService.insertRedisOrderInfo(userInfo.getUserNo() , Long.parseLong(msId));
-//        if(orderInfo != null){
-//            return DtoUtil.returnSuccess("已经购买成功");
-//        }
 
         //入队
         MiaoshaMessage mm = new MiaoshaMessage();

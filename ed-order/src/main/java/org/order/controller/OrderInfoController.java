@@ -58,6 +58,7 @@ public class OrderInfoController {
         if(null == userInfo){
             return DtoUtil.returnFail("请先登录用户" , "00000");
         }
+        System.out.println(userInfo);
 
         //生成订单
         int count = orderInfoService.buyInfoByOrderInfo(userInfo , Long.parseLong(courseNum) , 0 , null);
@@ -67,9 +68,6 @@ public class OrderInfoController {
 
         return DtoUtil.returnSuccess("新增成功!!");
     }
-
-
-
 
 
 }

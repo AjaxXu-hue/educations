@@ -19,6 +19,8 @@
         <result property="payType" column="pay_type" jdbcType="INTEGER"/>
         <result property="payNo" column="pay_no" jdbcType="INTEGER"/>
         <result property="orderStatus" column="order_status" jdbcType="INTEGER"/>
+        <result property="orderType" column="order_type" jdbcType="INTEGER"/>
+        <result property="msId" column="msId" jdbcType="INTEGER"/>
         <result property="remarkCus" column="remark_cus" jdbcType="VARCHAR"/>
         <result property="remark" column="remark" jdbcType="VARCHAR"/>
         <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
@@ -103,8 +105,8 @@
 
     <!--新增所有列-->
     <insert id="insertOrderInfo" keyProperty="id" useGeneratedKeys="true">
-        insert into education_course.order_info(order_type,pay_no ,lecturer_user_no, lecturer_name, user_no, mobile, order_no, course_id, course_name, price_payable, price_discount, price_paid, platform_profit, lecturer_profit, order_status, gmt_create, gmt_modified)
-        values (#{orderType},#{payNo},#{lecturerUserNo}, #{lecturerName}, #{userNo}, #{mobile}, #{orderNo}, #{courseId}, #{courseName}, #{pricePayable}, #{priceDiscount}, #{pricePaid}, #{platformProfit}, #{lecturerProfit}, #{orderStatus}, #{gmtCreate}, #{gmtModified})
+        insert into education_course.order_info(msId , order_type,pay_no ,lecturer_user_no, lecturer_name, user_no, mobile, order_no, course_id, course_name, price_payable, price_discount, price_paid, platform_profit, lecturer_profit, order_status, gmt_create, gmt_modified)
+        values (#{msId},#{orderType},#{payNo},#{lecturerUserNo}, #{lecturerName}, #{userNo}, #{mobile}, #{orderNo}, #{courseId}, #{courseName}, #{pricePayable}, #{priceDiscount}, #{pricePaid}, #{platformProfit}, #{lecturerProfit}, #{orderStatus}, #{gmtCreate}, #{gmtModified})
     </insert>
 
     <!--通过主键修改数据-->
@@ -183,5 +185,12 @@
         SET `order_status` = 19
         WHERE `order_status` = 16 AND TIMESTAMPDIFF(SECOND , `gmt_create` , NOW()) >= 2*3600
     </update>
+
+    <!--查询需要刷新订单-->
+    <select id="findAllOrderStatus" resultMap="OrderInfoMap">
+        SELECT *
+        FROM education_course.order_info
+        WHERE `order_status` = 16 AND TIMESTAMPDIFF(SECOND , `gmt_create` , NOW()) >= 2*3600
+    </select>
 
 </mapper>

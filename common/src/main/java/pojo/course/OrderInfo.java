@@ -72,8 +72,11 @@ public class OrderInfo {
     */
     private Integer orderStatus;
 
+    //秒杀ID
+    private Integer msId;
+
     /**
-     * 订单状态(关联字典表)
+     * 订单类型(关联字典表)
      */
     private Integer orderType;
     /**
@@ -274,6 +277,14 @@ public class OrderInfo {
         this.payNo = payNo;
     }
 
+    public Integer getMsId() {
+        return msId;
+    }
+
+    public void setMsId(Integer msId) {
+        this.msId = msId;
+    }
+
     @Override
     public String toString() {
         return "OrderInfo{" +
@@ -291,8 +302,10 @@ public class OrderInfo {
                 ", platformProfit=" + platformProfit +
                 ", lecturerProfit=" + lecturerProfit +
                 ", payType=" + payType +
-                ", payNo=" + payNo +
+                ", payNo='" + payNo + '\'' +
                 ", orderStatus=" + orderStatus +
+                ", msId=" + msId +
+                ", orderType=" + orderType +
                 ", remarkCus='" + remarkCus + '\'' +
                 ", remark='" + remark + '\'' +
                 ", payTime=" + payTime +
