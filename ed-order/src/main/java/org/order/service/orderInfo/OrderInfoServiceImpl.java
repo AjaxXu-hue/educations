@@ -1,6 +1,11 @@
 package org.order.service.orderInfo;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import mapper.course.OrderInfoMapper;
+import org.order.config.rabbitmq.MiaoshaMessage;
 import org.order.service.course.CourseService;
 import org.order.service.lecturer.LecturerService;
 import org.order.utils.RedisAPI;
@@ -72,7 +77,7 @@ public class OrderInfoServiceImpl implements OrderInfoService{
 
     //单击购买按钮生成订单（用户信息， 购买课程 ， 秒杀价格）
     @Override
-    public int buyInfoByOrderInfo(User userInfo , Long courseNum ,double price) {
+    public int buyInfoByOrderInfo(User userInfo , Long courseNum ,double price , String msId) {
         //根据课程ID查询课程信息
         Course course = courseService.findById(courseNum);
 
@@ -114,7 +119,7 @@ public class OrderInfoServiceImpl implements OrderInfoService{
         orderInfo.setPayNo("");
 
         //写入redis中（用户编号信息_课程Id）
-        redisAPI.set(userInfo.getUserNo()+"_"+courseNum , OrderInfo.class , 0);
+        redisAPI.set("order:"+userInfo.getUserNo()+"_"+msId , JSON.toJSONString(orderInfo), 0);
 
         return insertOrderInfo(orderInfo);
     }
@@ -122,7 +127,8 @@ public class OrderInfoServiceImpl implements OrderInfoService{
     //读取缓存中的信息(存储到redis中)(传入用户编号，和秒杀商品Id)
     @Override
     public OrderInfo insertRedisOrderInfo(Long userNo, Long miaoShaCourseId) {
-        return (OrderInfo) redisAPI.get(userNo+"_"+miaoShaCourseId);
+        String info = (String) redisAPI.get("order:"+userNo+"_"+miaoShaCourseId);
+        return JSONObject.parseObject(info , OrderInfo.class);
     }
 
     //生成唯一订单ID
@@ -135,4 +141,5 @@ public class OrderInfoServiceImpl implements OrderInfoService{
         int ran = (int)((Math.random()*9+1)*100000);
         return 21+time+ran;
     }
+
 }

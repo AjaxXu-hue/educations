@@ -1,6 +1,8 @@
 package org.order.utils;
 
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -15,6 +17,9 @@ public class RedisAPI {
     @Resource
     RedisTemplate redisTemplate;
 
+    @Resource
+    StringRedisTemplate stringRedisTemplate;
+
     /**
      * 普通缓存放入并设置时间
      * @param key 键
@@ -22,12 +27,12 @@ public class RedisAPI {
      * @param time 时间(秒) time要大于0 如果time小于等于0 将设置无限期
      * @return true成功 false 失败
      */
-    public boolean set(String key, Object value, long time) {
+    public boolean set(String key, String value, long time) {
         try {
             if (time > 0) {
-                redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
+                stringRedisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
             } else {
-                redisTemplate.opsForValue().set(key, value);
+                stringRedisTemplate.opsForValue().set(key, value);
             }
             return true;
         } catch (Exception e) {
@@ -38,7 +43,7 @@ public class RedisAPI {
 
     //根据key获取值
     public Object get(String key){
-        Object codeInfo = redisTemplate.opsForValue().get(key);
+        Object codeInfo = stringRedisTemplate.opsForValue().get(key);
         return codeInfo;
     }
 
@@ -49,7 +54,7 @@ public class RedisAPI {
      */
     public boolean hasKey(String key) {
         try {
-            return redisTemplate.hasKey(key);
+            return stringRedisTemplate.hasKey(key);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -67,4 +72,19 @@ public class RedisAPI {
         }
     }
 
+    /**
+     * 递减
+     * @param key 键
+     * @return
+     */
+    public Boolean decr(String key) {
+        Long time=stringRedisTemplate.opsForValue().getOperations().getExpire(key);
+        int i=Integer.parseInt(stringRedisTemplate.opsForValue().get(key))-1;
+        if(i>0){
+            this.set(key,String.valueOf(i),time);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

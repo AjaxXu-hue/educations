@@ -29,11 +29,12 @@ public interface OrderInfoService {
     boolean flushSuccessOrderStatus();
 
     //单击购买按钮生成订单（用户信息， 购买课程 ， 秒杀价格）
-    int buyInfoByOrderInfo(User userInfo, Long courseNum , double price);
+    int buyInfoByOrderInfo(User userInfo, Long courseNum , double price ,String msId);
 
     //订单存储到缓存中(存储到redis中)(传入用户编号，和秒杀商品Id)
     OrderInfo insertRedisOrderInfo(Long userId , Long miaoShaCourseId);
 
     //生成订单号
     String orderNo();
+
 }

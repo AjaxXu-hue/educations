@@ -93,7 +93,7 @@
                 </otherwise>
             </choose>
         </set>
-        where id = #{id}
+        where id = #{id} and stock_count > 0
     </update>
 
 </mapper>

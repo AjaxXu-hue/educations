@@ -60,7 +60,7 @@ public class OrderInfoController {
         }
 
         //生成订单
-        int count = orderInfoService.buyInfoByOrderInfo(userInfo , Long.parseLong(courseNum) , 0);
+        int count = orderInfoService.buyInfoByOrderInfo(userInfo , Long.parseLong(courseNum) , 0 , null);
         if(count < 0){
             return DtoUtil.returnSuccess("新增失败!!");
         }

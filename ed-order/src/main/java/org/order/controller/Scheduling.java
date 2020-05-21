@@ -19,7 +19,7 @@ public class Scheduling {
      * 10分钟执行一次 刷新订单的状态 ,如果两小时内订单没有付款则更改为取消状态，
      * 0/30 * * * * ?
      */
-    @Scheduled(cron = "0/10 * * * * ?")
+    @Scheduled(cron = "* 0/10 * * * ?")
     public void flushCancelOrderStatus() {
         try {
             boolean flag = orderInfoService.flushSuccessOrderStatus();

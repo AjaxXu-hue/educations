@@ -35,8 +35,11 @@ public interface CourseMiaoshaService {
     int deleteById(Long id);
 
     //修改库存信息
-    int updateCourseStock(String id , String stoType);
+    boolean updateCourseStock(String id , String stoType);
 
     //修改库存 新增订单
     int miaosha(User userInfo, String msId);
+
+    //返回秒杀结果
+    public long getMiaoshaResult(long userId , long miaoshaId);
 }

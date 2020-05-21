@@ -7,9 +7,6 @@ import java.util.List;
 
 /**
  * (CourseMiaosha)表数据库访问层
- *
- * @author makejava
- * @since 2020-05-20 02:42:28
  */
 public interface CourseMiaoshaMapper {
 
